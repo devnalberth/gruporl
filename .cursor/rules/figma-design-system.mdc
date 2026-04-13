@@ -1,0 +1,57 @@
+---
+description: Regras para implementar designs do Figma (MCP) no site estático Grupo RL — tokens, style guides e fluxo obrigatório.
+globs: "**/*.html,**/*.css"
+alwaysApply: false
+---
+
+# Figma — Grupo RL (SITE)
+
+Arquivo Figma de referência: `SITE - GRUPO RL` (`fileKey`: `2pKl9zh9M8iUnLiZiWxsXF`).
+
+## O que já existe no repositório
+
+- **Style guides vivos** em `design-system.html`: frames **Cores** (`node-id=1-63` → `1:63`) e **Tipografia** (`node-id=1-94` → `1:94`), alinhados ao MCP (`get_design_context` + `get_screenshot`).
+- **Tokens CSS** em `:root` dentro de `design-system.html`: `--brand-color-primary`, `--brand-color-secondary`, `--color-details`, `--background-color`, `--gray-950`, `--gray-900`, `--gray-200`, `--gray-black`, `--gray-white`, `--color-white`.
+- Stack atual: **HTML + CSS** (sem bundler, sem React). Fontes via Google Fonts: Manrope, Plus Jakarta Sans, Roboto Condensed, Inter.
+
+## Organização de arquivos
+
+- Novas páginas ou seções do site: preferir HTML na raiz do projeto `gruporl/` ou subpastas acordadas com o time.
+- Estilos: CSS no mesmo arquivo da página ou arquivo `.css` dedicado na mesma pasta, mantendo **tokens espelhados** com os nomes do Figma quando existirem variáveis nomeadas.
+
+## Tipografia (produto)
+
+- **Família principal:** Manrope (títulos H1–H4, Span, Paragraph, rótulos de botão conforme guia).
+- **Rótulos / meta da tabela de spec:** Plus Jakarta Sans (pesos Light / Medium / Bold conforme o frame Tipografia).
+- **Colunas Size / Line Height / Weight na tabela:** Roboto Condensed Regular 20px, cor `#E1E1E6`.
+- **Desktop:** H1 64px / lh 1.2 Bold; H2 48px; H3 32px; H4 26px; Span 14px / lh 1 Medium; Paragraph 16px / lh 1.6 Regular; Button 18px / lh 1 (rótulo “Semibold” no guia — usar peso 600 no CSS do componente se necessário).
+- **Mobile:** H1 40px; H2 24px; H3 20px; Span 14px; Paragraph 16px; nomes de estilo em tom `#C4C4CC` como no Figma.
+
+## Cores (produto)
+
+- `brand-color-primary`: `#000200` (swatch com borda branca 1px no guia).
+- `brand-color-secondary`: `#EF7C00`.
+- `color-details`: `#474A51` (rótulo hex em branco no guia).
+- `background-color`: `#FFFFFF`.
+
+## Fluxo obrigatório com Figma MCP (não pular)
+
+1. `get_design_context` com `fileKey` e `nodeId` do frame ou componente exato (IDs no formato `1:63` quando a URL tiver `node-id=1-63`).
+2. Se a resposta for grande ou truncada: `get_metadata` no nó pai e novo `get_design_context` só nos filhos necessários.
+3. `get_screenshot` do mesmo nó para validação visual.
+4. Baixar assets quando o MCP retornar URLs; **não** instalar pacotes de ícones genéricos se o design trouxer SVG/PNG do Figma.
+5. Traduzir o export (geralmente React + utilitários) para **HTML/CSS deste projeto**, preservando medidas, cores e hierarquia.
+6. Comparar o resultado com o screenshot antes de concluir.
+
+## Regras de implementação
+
+- IMPORTANT: Tratar o código gerado pelo MCP como **especificação visual**, não como estilo final de código (não depender de Tailwind no bundle a menos que o projeto adote).
+- IMPORTANT: **Não inventar** cores ou escalas tipográficas que não existam nos frames de style guide ou nos componentes aprovados.
+- Reutilizar `data-node-id` quando for útil para rastreio com o Figma; para produção pública pode-se remover ou substituir por classes semânticas.
+- Contraste e foco visível: manter estados `:focus-visible` em links e controles (WCAG AA quando aplicável).
+- Imagens do MCP (`figma.com/api/mcp/asset/...`) expiram em cerca de 7 dias: para produção, salvar em `/assets` ou pasta equivalente e atualizar `src`.
+
+## Wireframe e próximas fases
+
+- Ao implementar wireframes ou páginas finais, **alinhar** tipografia e cores aos frames **Cores** e **Tipografia** acima antes de introduzir novos tokens.
+- Novos tokens só entram após existirem no Figma (ou alinhamento explícito com design).

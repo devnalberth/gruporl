@@ -1,0 +1,17 @@
+:root {
+  --neutral-white-10: #fefefe;
+  --neutral-white-20: #d5cece;
+  --neutral-black-101: #1a1a1a;
+  --brand-color-secondary: #ef7c00;
+  --brand-color-primary: #000200;
+  --color-details: #474a51;
+  --background-color: #ffffff;
+  --surface-subtle: #f9f9f9;
+  --surface-border: #f3f4f6;
+  --text-neutral-main: #1a1a1e;
+  --text-neutral-soft: #70707b;
+  --stroke-neutral-main: #e4e4e7;
+  --primary-gray-800: #26272b;
+  --primary-gray-950: #131316;
+  --gray-black: #000000;
+}

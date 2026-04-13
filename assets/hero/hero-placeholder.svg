@@ -1,0 +1,127 @@
+<svg width="1440" height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="720" y1="0" x2="720" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A1411"/>
+      <stop offset="0.58" stop-color="#171210"/>
+      <stop offset="1" stop-color="#080707"/>
+    </linearGradient>
+    <linearGradient id="wall" x1="780" y1="128" x2="780" y2="894" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#735038"/>
+      <stop offset="0.4" stop-color="#654733"/>
+      <stop offset="1" stop-color="#2B211B"/>
+    </linearGradient>
+    <linearGradient id="wallShade" x1="390" y1="508" x2="1170" y2="508" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#774D35" stop-opacity="0.18"/>
+      <stop offset="0.3" stop-color="#F7B471" stop-opacity="0.08"/>
+      <stop offset="0.58" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0C0A0A" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="leftColumn" x1="-10" y1="120" x2="402" y2="188" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D48A46"/>
+      <stop offset="0.38" stop-color="#BA733A"/>
+      <stop offset="1" stop-color="#2D1C14" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="leftDarkBand" x1="160" y1="0" x2="160" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A201B"/>
+      <stop offset="1" stop-color="#120F0E"/>
+    </linearGradient>
+    <linearGradient id="slats" x1="1266" y1="152" x2="1388" y2="152" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B97B3B"/>
+      <stop offset="0.46" stop-color="#E0A35D"/>
+      <stop offset="1" stop-color="#7B4D22"/>
+    </linearGradient>
+    <linearGradient id="bottomFade" x1="720" y1="654" x2="720" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080707" stop-opacity="0"/>
+      <stop offset="0.45" stop-color="#090807" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#050505"/>
+    </linearGradient>
+    <radialGradient id="spotGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(525 92) rotate(90) scale(86 86)">
+      <stop stop-color="#FFD6A8" stop-opacity="0.92"/>
+      <stop offset="0.45" stop-color="#D98E4F" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#D98E4F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="upperGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(354 54) rotate(90) scale(200 260)">
+      <stop stop-color="#F8A357" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#F8A357" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blurLarge" x="-140" y="-80" width="638" height="1184" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="36"/>
+    </filter>
+    <filter id="blurMedium" x="106" y="-60" width="148" height="1144" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <filter id="blurSoft" x="442" y="8" width="166" height="168" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="1024" fill="url(#bg)"/>
+  <rect y="0" width="1440" height="118" fill="#0E0D0D"/>
+  <rect x="392" y="130" width="778" height="760" rx="10" fill="url(#wall)"/>
+  <rect x="392" y="130" width="778" height="760" rx="10" fill="url(#wallShade)"/>
+
+  <g opacity="0.22" stroke="#7D5944" stroke-width="3.2">
+    <path d="M432 206H1124"/>
+    <path d="M410 324H1138"/>
+    <path d="M404 442H1142"/>
+    <path d="M404 560H1142"/>
+    <path d="M404 678H1142"/>
+    <path d="M404 796H1142"/>
+    <path d="M542 154V872"/>
+    <path d="M716 154V872"/>
+    <path d="M892 154V872"/>
+  </g>
+
+  <g filter="url(#blurLarge)" opacity="0.94">
+    <rect x="-36" y="36" width="362" height="952" rx="18" fill="url(#leftColumn)"/>
+  </g>
+  <g filter="url(#blurMedium)" opacity="0.75">
+    <rect x="154" y="-10" width="52" height="1036" rx="14" fill="url(#leftDarkBand)"/>
+  </g>
+  <ellipse cx="354" cy="52" rx="268" ry="156" fill="url(#upperGlow)"/>
+
+  <g filter="url(#blurSoft)">
+    <circle cx="525" cy="92" r="58" fill="url(#spotGlow)"/>
+  </g>
+  <circle cx="525" cy="92" r="18" fill="#F6D4AA"/>
+  <path d="M501 82L540 98" stroke="#2D231D" stroke-width="9" stroke-linecap="round"/>
+  <path d="M479 74L516 34" stroke="#2D231D" stroke-width="7" stroke-linecap="round"/>
+
+  <rect x="561" y="146" width="34" height="34" rx="7" fill="#F1EEE9"/>
+  <rect x="572" y="158" width="13" height="10" rx="2.5" fill="#74716C"/>
+
+  <g>
+    <rect x="468" y="411" width="114" height="88" fill="#171515" stroke="#0C0B0B" stroke-width="12"/>
+    <rect x="506" y="440" width="38" height="20" fill="#4D7D90"/>
+    <rect x="468" y="529" width="114" height="88" fill="#171515" stroke="#0C0B0B" stroke-width="12"/>
+    <rect x="494" y="557" width="60" height="28" fill="#8E7B66"/>
+
+    <rect x="633" y="411" width="114" height="88" fill="#171515" stroke="#0C0B0B" stroke-width="12"/>
+    <rect x="654" y="440" width="72" height="20" fill="#69635D"/>
+
+    <rect x="812" y="411" width="114" height="88" fill="#171515" stroke="#0C0B0B" stroke-width="12"/>
+    <rect x="836" y="442" width="66" height="18" fill="#55514D"/>
+
+    <rect x="633" y="566" width="114" height="88" fill="#171515" stroke="#0C0B0B" stroke-width="12"/>
+    <rect x="662" y="598" width="56" height="16" fill="#7A6F67"/>
+
+    <rect x="812" y="566" width="114" height="88" fill="#171515" stroke="#0C0B0B" stroke-width="12"/>
+    <rect x="837" y="596" width="64" height="18" fill="#4E4A46"/>
+  </g>
+
+  <rect x="1168" y="0" width="272" height="1024" fill="#121111"/>
+  <rect x="1230" y="140" width="150" height="824" fill="#0B0A0A"/>
+  <g opacity="0.94">
+    <rect x="1256" y="150" width="8" height="798" rx="4" fill="url(#slats)"/>
+    <rect x="1270" y="150" width="8" height="798" rx="4" fill="url(#slats)"/>
+    <rect x="1284" y="150" width="8" height="798" rx="4" fill="url(#slats)"/>
+    <rect x="1298" y="150" width="8" height="798" rx="4" fill="url(#slats)"/>
+    <rect x="1312" y="150" width="8" height="798" rx="4" fill="url(#slats)"/>
+    <rect x="1326" y="150" width="8" height="798" rx="4" fill="url(#slats)"/>
+    <rect x="1340" y="150" width="8" height="798" rx="4" fill="url(#slats)"/>
+    <rect x="1354" y="150" width="8" height="798" rx="4" fill="url(#slats)"/>
+    <rect x="1368" y="150" width="8" height="798" rx="4" fill="url(#slats)"/>
+  </g>
+
+  <rect y="652" width="1440" height="372" fill="url(#bottomFade)"/>
+</svg>

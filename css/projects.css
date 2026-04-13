@@ -1,0 +1,252 @@
+.projects {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--background-color);
+  color: var(--text-neutral-main);
+  scroll-margin-top: 96px;
+}
+
+.projects__anchor {
+  position: absolute;
+  top: -96px;
+}
+
+.projects__inner {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+  padding: 100px 64px;
+}
+
+.projects__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: min(100%, 619px);
+  text-align: center;
+}
+
+.projects__eyebrow {
+  margin: 0;
+  color: var(--text-neutral-soft);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.projects__title {
+  margin: 0;
+  color: var(--text-neutral-main);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 64px;
+  width: min(100%, 1312px);
+}
+
+.projects__column {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  min-width: 0;
+}
+
+.projects__column--offset {
+  padding-top: 0;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0;
+  min-width: 0;
+}
+
+.project-card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.project-card--tall .project-card__image {
+  aspect-ratio: 624 / 447;
+}
+
+.project-card--large .project-card__image {
+  aspect-ratio: 624 / 507;
+}
+
+.project-card--xl .project-card__image {
+  aspect-ratio: 624 / 528;
+}
+
+.project-card--medium .project-card__image {
+  aspect-ratio: 624 / 426;
+}
+
+.project-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  margin: 0;
+}
+
+.project-card__title {
+  color: var(--text-neutral-main);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.project-card__divider {
+  width: 1px;
+  height: 16px;
+  background: var(--stroke-neutral-main);
+  flex-shrink: 0;
+}
+
+.project-card__description {
+  color: var(--text-neutral-soft);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  overflow-wrap: anywhere;
+  white-space: nowrap;
+}
+
+.projects__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 249px;
+  min-height: 48px;
+  padding: 11px 24px;
+  background: linear-gradient(180deg, var(--primary-gray-800) 0%, var(--primary-gray-950) 100%);
+  border-radius: 40px;
+  box-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.3),
+    0 14px 4px rgba(0, 0, 0, 0),
+    0 9px 4px rgba(0, 0, 0, 0.03),
+    0 5px 3px rgba(0, 0, 0, 0.1),
+    0 2px 2px rgba(0, 0, 0, 0.17),
+    0 1px 1px rgba(0, 0, 0, 0.2);
+  color: var(--neutral-white-10);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+  touch-action: manipulation;
+}
+
+.projects__cta:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.projects__cta:focus-visible {
+  outline: 2px solid var(--text-neutral-main);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1200px) {
+  .projects__inner {
+    padding-inline: 32px;
+  }
+
+  .projects__grid {
+    gap: 32px;
+  }
+
+  .projects__title {
+    font-size: clamp(38px, 5vw, 48px);
+  }
+
+  .project-card__meta {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  .projects__inner {
+    padding: 72px 20px;
+    gap: 48px;
+  }
+
+  .projects__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .projects__column {
+    gap: 32px;
+  }
+
+  .projects__title {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+  .project-card__title {
+    font-size: 16px;
+  }
+
+  .project-card__title,
+  .project-card__description {
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 560px) {
+  .projects__eyebrow {
+    font-size: 12px;
+  }
+
+  .project-card__meta {
+    gap: 12px;
+  }
+
+  .project-card__divider {
+    display: none;
+  }
+
+  .project-card__title,
+  .project-card__description {
+    width: 100%;
+    white-space: normal;
+  }
+
+  .projects__cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects__cta {
+    transition: none;
+  }
+}
