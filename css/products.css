@@ -42,6 +42,9 @@
   height: 400px;
   object-fit: cover;
   border-radius: 12px;
+  filter: blur(4px);
+  opacity: 0.92;
+  transition: opacity 0.25s ease;
   box-shadow:
     0 39px 11px rgba(48, 48, 48, 0),
     0 25px 10px rgba(48, 48, 48, 0.01),

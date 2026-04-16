@@ -90,18 +90,24 @@
   border-bottom: 1px solid rgba(239, 124, 0, 0.25);
 }
 
-.location-card__map {
+.location-card__map-frame {
   width: 100%;
   height: 260px;
-  object-fit: cover;
+  background: #f3f4f6;
+}
+
+.location-card__map-iframe {
   display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .location-card__map-link {
   position: absolute;
   top: 0.875rem;
   left: 0.875rem;
-  z-index: 1;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;

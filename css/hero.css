@@ -216,7 +216,7 @@ main {
 }
 
 .hero__btn-ghost {
-  padding: 8px 32px;
+  padding: 6px 28px;
   background: rgba(255, 255, 255, 0.22);
   border: 1px solid var(--neutral-white-10);
   border-radius: 100px;

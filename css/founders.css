@@ -9,7 +9,7 @@
   margin: 0 auto;
   border-radius: 20.641px;
   overflow: hidden;
-  min-height: 760px;
+  min-height: 1000px;
   display: flex;
   align-items: flex-end;
   padding: clamp(1.5rem, 4vw, 3.75rem);
@@ -23,7 +23,6 @@
   width: 100%;
   height: 192.9%;
   object-fit: cover;
-  object-position: center top;
   z-index: -2;
 }
 
@@ -90,7 +89,7 @@
   }
 
   .founders__inner {
-    min-height: 640px;
+    min-height: 800px;
     padding: 1.5rem;
     border-radius: 16px;
   }
