@@ -109,77 +109,55 @@
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
-  min-height: 635px;
+  background: #111;
+  aspect-ratio: 16 / 9;
 }
 
-.feedbacks__hero img {
+.feedbacks__hero-video {
+  position: absolute;
+  inset: 0;
+}
+
+.feedbacks__hero-iframe {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.feedbacks__hero-play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: none;
-  width: 72px;
-  height: 72px;
-  border-radius: 99px;
-  background: #000200;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.feedbacks__hero-play img {
-  width: 32px;
-  height: 32px;
-}
-
-.feedbacks__hero-play:focus-visible,
-.feedback-card__play:focus-visible {
-  outline: 2px solid #ffffff;
-  outline-offset: 3px;
+  border: 0;
 }
 
 .feedbacks__list {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 11px;
+  max-width: 720px;
+  width: 100%;
+  margin-inline: auto;
+  align-items: start;
 }
 
+/* Proporção 9:16 estável (grid + aspect-ratio quebrava altura em alguns casos) */
 .feedback-card {
   position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 177.78%;
   border-radius: 10px;
   overflow: hidden;
-  min-height: 313px;
+  background: #111;
 }
 
-.feedback-card img {
+.feedback-card__video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
-.feedback-card__play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: none;
-  border-radius: 80px;
-  background: rgba(26, 26, 26, 0.5);
-  width: 52px;
-  height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+.feedback-card__video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 @media (max-width: 1280px) {
@@ -198,12 +176,9 @@
     align-items: flex-start;
   }
 
-  .feedbacks__hero {
-    min-height: 460px;
-  }
-
   .feedbacks__list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -224,21 +199,8 @@
     min-width: 0;
   }
 
-  .feedbacks__hero {
-    min-height: 360px;
-  }
-
-  .feedbacks__hero-play {
-    width: 64px;
-    height: 64px;
-  }
-
-  .feedbacks__hero-play img {
-    width: 28px;
-    height: 28px;
-  }
-
   .feedbacks__list {
     grid-template-columns: 1fr;
+    max-width: 280px;
   }
 }

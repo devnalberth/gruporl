@@ -36,16 +36,17 @@
   <main id="conteudo-principal">
     <!-- Hero — Figma: s01 -HERO (node 2004:9613) -->
     <section class="hero" data-node-id="2004:9613" data-name="s01 -HERO" aria-label="Apresentação">
-      <div class="hero__media" aria-hidden="true">
-        <img
-          class="hero__media-image"
-          src="assets/hero/hero-placeholder.svg"
-          width="1440"
-          height="1024"
-          alt=""
-          fetchpriority="high"
-          decoding="async"
-        />
+      <div class="hero__media">
+        <div class="hero__video">
+          <iframe
+            class="hero__video-iframe"
+            src="https://www.youtube.com/embed/_dPj0KgniDE?autoplay=1&mute=1&playsinline=1&si=2xK4ZQJQUq9HmClM"
+            title="Vídeo institucional do Grupo RL no YouTube"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
 
       <header class="hero__header" data-node-id="2004:9623" data-name="Header Nav">
@@ -73,7 +74,7 @@
       <div class="hero__headline" data-node-id="2004:9614" data-name="HEADLINE">
         <div class="hero__title-block" data-node-id="2004:9615" data-name="Title and desc">
           <div class="hero__location" data-node-id="2004:9616" data-name="Location">
-            <img src="assets/hero/icon-location.png" width="20" height="20" alt="" data-node-id="2010:2286" />
+            <img src="assets/icons/marker.svg" width="20" height="20" alt="Localização" data-node-id="2010:2286" />
             <span data-node-id="2004:9618">Maceió, Alagoas</span>
           </div>
           <h1 class="hero__title" data-node-id="2004:9619">
@@ -113,6 +114,7 @@
       <div class="timeline__divider" aria-hidden="true" data-node-id="2120:1800"></div>
 
       <div class="timeline__rail" data-node-id="2120:1801" data-name="Container">
+        <span class="timeline__knob" aria-hidden="true"></span>
         <ol class="timeline__list">
           <li class="timeline__item timeline__item--left" style="--timeline-item-height: 225.5px;" data-node-id="2120:1803">
             <article class="timeline-card" data-node-id="2120:1804">
@@ -122,7 +124,6 @@
                 A RL Office nasce com o objetivo de transformar ambientes corporativos, oferecendo soluções de mobiliário inteligentes para empresas que buscam crescimento.
               </p>
             </article>
-            <span class="timeline__marker" aria-hidden="true" data-node-id="2120:1814"></span>
           </li>
 
           <li class="timeline__item timeline__item--right" style="--timeline-item-height: 225.5px;" data-node-id="2120:1815">
@@ -133,7 +134,6 @@
                 Com a crescente demanda, expandimos nossa atuação para novos mercados, ampliando o portfólio de produtos e a equipe de especialistas em ambientação corporativa.
               </p>
             </article>
-            <span class="timeline__marker" aria-hidden="true" data-node-id="2120:1826"></span>
           </li>
 
           <li class="timeline__item timeline__item--left" style="--timeline-item-height: 225.5px;" data-node-id="2120:1827">
@@ -144,7 +144,6 @@
                 Firmamos uma parceria estratégica com a Bentec, referência internacional em design ergonômico, elevando o padrão dos projetos entregues aos nossos clientes.
               </p>
             </article>
-            <span class="timeline__marker" aria-hidden="true" data-node-id="2120:1838"></span>
           </li>
 
           <li class="timeline__item timeline__item--right" style="--timeline-item-height: 200px;" data-node-id="2120:1839">
@@ -155,7 +154,6 @@
                 Tornamo-nos o Grupo RL, reunindo diferentes unidades de negócio sob uma mesma visão: estruturar ambientes que fazem empresas crescerem.
               </p>
             </article>
-            <span class="timeline__marker" aria-hidden="true" data-node-id="2120:1850"></span>
           </li>
 
           <li class="timeline__item timeline__item--left" style="--timeline-item-height: 225.5px;" data-node-id="2120:1851">
@@ -166,7 +164,6 @@
                 Hoje, somos referência nacional em mobiliário corporativo, com centenas de projetos entregues e clientes que confiam em nossa expertise para construir seus espaços.
               </p>
             </article>
-            <span class="timeline__marker" aria-hidden="true" data-node-id="2120:1862"></span>
           </li>
         </ol>
       </div>
@@ -673,7 +670,7 @@
       </div>
     </section>
 
-    <!-- Vídeo Cases — Figma: S06Cases (node 2128:2166) -->
+    <!-- Vídeo Cases: MP4 + poster poster-NN.webp em assets/video-cases/; preload="none" no vídeo. -->
     <section class="video-cases" data-node-id="2128:2166" data-name="S06Cases" aria-labelledby="video-cases-title">
       <div class="video-cases__inner">
         <header class="video-cases__header" data-node-id="2128:2167">
@@ -690,7 +687,17 @@
         <div class="video-cases__track-wrap" data-node-id="2128:2196">
           <div class="video-cases__track">
             <article class="video-case-card" data-node-id="2128:2198">
-              <img src="assets/processes/process-01.webp" width="220" height="380" loading="lazy" decoding="async" alt="Escritório Corporativo Sector A" />
+              <video
+                class="video-case-card__video"
+                src="assets/video-cases/01.mp4"
+                poster="assets/video-cases/poster-01.webp"
+                width="220"
+                height="380"
+                preload="none"
+                muted
+                playsinline
+                aria-label="Vídeo: Escritório Corporativo Sector A"
+              ></video>
               <span class="video-case-card__index">01</span>
               <div class="video-case-card__content">
                 <button type="button" class="video-case-card__play" aria-label="Reproduzir vídeo Escritório Corporativo Sector A">
@@ -703,7 +710,17 @@
             </article>
 
             <article class="video-case-card" data-node-id="2128:2214">
-              <img src="assets/processes/process-02.webp" width="220" height="380" loading="lazy" decoding="async" alt="Ambiente Planejado Residencial Premium" />
+              <video
+                class="video-case-card__video"
+                src="assets/video-cases/02.mp4"
+                poster="assets/video-cases/poster-02.webp"
+                width="220"
+                height="380"
+                preload="none"
+                muted
+                playsinline
+                aria-label="Vídeo: Ambiente Planejado Residencial Premium"
+              ></video>
               <span class="video-case-card__index">02</span>
               <div class="video-case-card__content">
                 <button type="button" class="video-case-card__play" aria-label="Reproduzir vídeo Ambiente Planejado Residencial Premium">
@@ -716,7 +733,17 @@
             </article>
 
             <article class="video-case-card" data-node-id="2128:2230">
-              <img src="assets/processes/process-03.webp" width="220" height="380" loading="lazy" decoding="async" alt="Showroom Corporativo Farol" />
+              <video
+                class="video-case-card__video"
+                src="assets/video-cases/03.mp4"
+                poster="assets/video-cases/poster-03.webp"
+                width="220"
+                height="380"
+                preload="none"
+                muted
+                playsinline
+                aria-label="Vídeo: Showroom Corporativo Farol"
+              ></video>
               <span class="video-case-card__index">03</span>
               <div class="video-case-card__content">
                 <button type="button" class="video-case-card__play" aria-label="Reproduzir vídeo Showroom Corporativo Farol">
@@ -729,7 +756,17 @@
             </article>
 
             <article class="video-case-card" data-node-id="2128:2246">
-              <img src="assets/method/method-01.webp" width="220" height="380" loading="lazy" decoding="async" alt="Sala de Reuniões Empresa Jurídica" />
+              <video
+                class="video-case-card__video"
+                src="assets/video-cases/04.mp4"
+                poster="assets/video-cases/poster-04.webp"
+                width="220"
+                height="380"
+                preload="none"
+                muted
+                playsinline
+                aria-label="Vídeo: Sala de Reuniões Empresa Jurídica"
+              ></video>
               <span class="video-case-card__index">04</span>
               <div class="video-case-card__content">
                 <button type="button" class="video-case-card__play" aria-label="Reproduzir vídeo Sala de Reuniões Empresa Jurídica">
@@ -742,7 +779,17 @@
             </article>
 
             <article class="video-case-card" data-node-id="2128:2262">
-              <img src="assets/method/method-02.webp" width="220" height="380" loading="lazy" decoding="async" alt="Open Space Startup de Tecnologia" />
+              <video
+                class="video-case-card__video"
+                src="assets/video-cases/05.mp4"
+                poster="assets/video-cases/poster-05.webp"
+                width="220"
+                height="380"
+                preload="none"
+                muted
+                playsinline
+                aria-label="Vídeo: Open Space Startup de Tecnologia"
+              ></video>
               <span class="video-case-card__index">05</span>
               <div class="video-case-card__content">
                 <button type="button" class="video-case-card__play" aria-label="Reproduzir vídeo Open Space Startup de Tecnologia">
@@ -755,7 +802,17 @@
             </article>
 
             <article class="video-case-card" data-node-id="2128:2278">
-              <img src="assets/method/method-03.webp" width="220" height="380" loading="lazy" decoding="async" alt="Recepção Clínica Médica Premium" />
+              <video
+                class="video-case-card__video"
+                src="assets/video-cases/06.mp4"
+                poster="assets/video-cases/poster-06.webp"
+                width="220"
+                height="380"
+                preload="none"
+                muted
+                playsinline
+                aria-label="Vídeo: Recepção Clínica Médica Premium"
+              ></video>
               <span class="video-case-card__index">06</span>
               <div class="video-case-card__content">
                 <button type="button" class="video-case-card__play" aria-label="Reproduzir vídeo Recepção Clínica Médica Premium">
@@ -808,43 +865,55 @@
           </div>
         </header>
 
-        <article class="feedbacks__hero" data-node-id="2009:1807" aria-label="Depoimento em destaque">
-          <img src="assets/feedbacks/contact-thumb.webp" width="1128" height="635" loading="lazy" decoding="async" alt="Depoimento em vídeo de cliente do Grupo RL." />
-          <button type="button" class="feedbacks__hero-play" aria-label="Reproduzir depoimento em destaque">
-            <img src="assets/feedbacks/play-main.svg" width="48" height="48" alt="" />
-          </button>
-        </article>
+        <div class="feedbacks__hero" data-node-id="2009:1807">
+          <div class="feedbacks__hero-video">
+            <iframe
+              class="feedbacks__hero-iframe"
+              src="https://www.youtube.com/embed/duI2SvMhjmo?si=09O5t7vQcPWIfuOR"
+              title="Depoimento em vídeo — Grupo RL (YouTube)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
 
-        <div class="feedbacks__list" data-node-id="2009:1848" aria-label="Lista de depoimentos">
-          <article class="feedback-card" data-node-id="2009:1861">
-            <img src="assets/method/method-01.webp" width="216" height="313" loading="lazy" decoding="async" alt="Depoimento de cliente 1." />
-            <button type="button" class="feedback-card__play" aria-label="Reproduzir depoimento 1">
-              <img src="assets/feedbacks/play-small-01.svg" width="26" height="26" alt="" />
-            </button>
+        <div class="feedbacks__list" data-node-id="2009:1848" aria-label="Depoimentos em vídeo vertical">
+          <article class="feedback-card feedback-card--short" data-node-id="2009:1861">
+            <div class="feedback-card__video">
+              <iframe
+                src="https://www.youtube.com/embed/o_bSb7xrPxg?playsinline=1"
+                title="Depoimento curto no YouTube (1)"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
           </article>
-          <article class="feedback-card" data-node-id="2010:2475">
-            <img src="assets/method/method-02.webp" width="216" height="313" loading="lazy" decoding="async" alt="Depoimento de cliente 2." />
-            <button type="button" class="feedback-card__play" aria-label="Reproduzir depoimento 2">
-              <img src="assets/feedbacks/play-small-02.svg" width="26" height="26" alt="" />
-            </button>
+          <article class="feedback-card feedback-card--short" data-node-id="2010:2475">
+            <div class="feedback-card__video">
+              <iframe
+                src="https://www.youtube.com/embed/wcpcoAAeO4U?playsinline=1"
+                title="Depoimento curto no YouTube (2)"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
           </article>
-          <article class="feedback-card" data-node-id="2010:2476">
-            <img src="assets/method/method-03.webp" width="216" height="313" loading="lazy" decoding="async" alt="Depoimento de cliente 3." />
-            <button type="button" class="feedback-card__play" aria-label="Reproduzir depoimento 3">
-              <img src="assets/feedbacks/play-small-03.svg" width="26" height="26" alt="" />
-            </button>
-          </article>
-          <article class="feedback-card" data-node-id="2010:2477">
-            <img src="assets/method/method-04.webp" width="216" height="313" loading="lazy" decoding="async" alt="Depoimento de cliente 4." />
-            <button type="button" class="feedback-card__play" aria-label="Reproduzir depoimento 4">
-              <img src="assets/feedbacks/play-small-04.svg" width="26" height="26" alt="" />
-            </button>
-          </article>
-          <article class="feedback-card" data-node-id="2010:2478">
-            <img src="assets/method/method-05.webp" width="216" height="313" loading="lazy" decoding="async" alt="Depoimento de cliente 5." />
-            <button type="button" class="feedback-card__play" aria-label="Reproduzir depoimento 5">
-              <img src="assets/feedbacks/play-small-05.svg" width="26" height="26" alt="" />
-            </button>
+          <article class="feedback-card feedback-card--short" data-node-id="2010:2476">
+            <div class="feedback-card__video">
+              <iframe
+                src="https://www.youtube.com/embed/WqHoaXaPFbA?playsinline=1"
+                title="Depoimento curto no YouTube (3)"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
           </article>
         </div>
       </div>
@@ -1166,6 +1235,137 @@
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             activate(card);
+          }
+        });
+      });
+    })();
+
+    (function () {
+      var rail = document.querySelector('.timeline__rail');
+      var knob = document.querySelector('.timeline__knob');
+      var timelineCards = document.querySelectorAll('.timeline__rail .timeline-card');
+      var padTop = 72;
+      var padBottom = 64;
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (knob && rail) {
+        if (reduceMotion) {
+          knob.classList.add('timeline__knob--reduced');
+        } else {
+          var targetTop = padTop;
+          var currentTop = null;
+          var rafId = null;
+          var smooth = 0.1;
+
+          function measureTargetTop() {
+            var track = Math.max(0, rail.clientHeight - padTop - padBottom);
+            if (track <= 0) return padTop;
+            var rect = rail.getBoundingClientRect();
+            var lineTop = rect.top + padTop;
+            var refY = window.innerHeight * 0.42;
+            var t = (refY - lineTop) / track;
+            t = Math.max(0, Math.min(1, t));
+            return padTop + t * track;
+          }
+
+          function tickKnob() {
+            rafId = null;
+            var diff = targetTop - currentTop;
+            if (Math.abs(diff) < 0.45) {
+              currentTop = targetTop;
+              knob.style.top = currentTop + 'px';
+              return;
+            }
+            currentTop += diff * smooth;
+            knob.style.top = currentTop + 'px';
+            rafId = requestAnimationFrame(tickKnob);
+          }
+
+          function updateKnobTarget() {
+            targetTop = measureTargetTop();
+            if (currentTop === null) {
+              currentTop = targetTop;
+              knob.style.top = currentTop + 'px';
+              return;
+            }
+            if (rafId === null) {
+              rafId = requestAnimationFrame(tickKnob);
+            }
+          }
+
+          function onResizeKnob() {
+            if (rafId !== null) {
+              cancelAnimationFrame(rafId);
+              rafId = null;
+            }
+            targetTop = measureTargetTop();
+            currentTop = targetTop;
+            knob.style.top = currentTop + 'px';
+          }
+
+          window.addEventListener('scroll', updateKnobTarget, { passive: true });
+          window.addEventListener('resize', onResizeKnob);
+          updateKnobTarget();
+        }
+      }
+
+      if (!timelineCards.length || typeof IntersectionObserver === 'undefined') {
+        timelineCards.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+        return;
+      }
+
+      if (reduceMotion) {
+        timelineCards.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+        return;
+      }
+
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+      );
+
+      timelineCards.forEach(function (el) {
+        io.observe(el);
+      });
+    })();
+
+    (function () {
+      var section = document.querySelector('.video-cases');
+      if (!section) return;
+
+      section.querySelectorAll('.video-case-card').forEach(function (card) {
+        var video = card.querySelector('.video-case-card__video');
+        var btn = card.querySelector('.video-case-card__play');
+        if (!video || !btn) return;
+
+        video.addEventListener('play', function () {
+          card.classList.add('video-case-card--playing');
+        });
+        video.addEventListener('pause', function () {
+          card.classList.remove('video-case-card--playing');
+        });
+
+        btn.addEventListener('click', function () {
+          section.querySelectorAll('.video-case-card__video').forEach(function (v) {
+            if (v !== video) {
+              v.pause();
+            }
+          });
+          if (video.paused) {
+            video.play().catch(function () {});
+          } else {
+            video.pause();
           }
         });
       });

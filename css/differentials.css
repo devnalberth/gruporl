@@ -1,9 +1,7 @@
 .differentials {
   box-sizing: border-box;
   width: 100%;
-  background:
-    radial-gradient(82% 220px at 50% 100%, rgba(239, 124, 0, 0.09) 0%, rgba(239, 124, 0, 0) 72%),
-    linear-gradient(180deg, #ffffff 0%, #fdfdfd 100%);
+  background: #ffffff;
   color: var(--brand-color-primary);
   font-family: "Manrope", system-ui, sans-serif;
 }
@@ -86,10 +84,20 @@
 }
 
 .differentials__track {
+  --dm-gap: 15px;
   display: flex;
   align-items: center;
+  gap: var(--dm-gap);
   width: max-content;
   animation: differentials-marquee 22s linear infinite;
+}
+
+/* Sem padding lateral nas listas do track: o espaço entre último e primeiro card
+   do loop vem só do gap do track — alinhado ao gap entre os <li> */
+.differentials__track .differentials__row {
+  flex-shrink: 0;
+  min-width: 0;
+  padding-inline: 0;
 }
 
 .differentials__track--reverse {
@@ -102,9 +110,8 @@
   align-items: center;
   gap: 15px;
   width: max-content;
-  min-width: 100%;
   margin: 0;
-  padding: 0 24px;
+  padding: 0;
   list-style: none;
 }
 
@@ -121,22 +128,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 11px;
-  min-height: 58px;
-  padding: 12px 28px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 11px;
-  background:
-    linear-gradient(180deg, rgba(35, 35, 38, 0.95) 0%, rgba(4, 4, 4, 1) 100%);
-  box-shadow:
-    0 0 29px rgba(255, 255, 255, 0.05),
-    inset 0 0 17px rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.82);
+  gap: 9px;
+  min-height: 44px;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  background: #000000;
+  color: rgba(255, 255, 255, 0.9);
   white-space: nowrap;
 }
 
 .differentials__tag span:last-child {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -158,7 +161,8 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-50% - 7.5px));
+    /* Track = 2×lista + gap entre elas: -50% compensa só metade do gap */
+    transform: translateX(calc(-50% - (var(--dm-gap) * 0.5)));
   }
 }
 
@@ -201,10 +205,6 @@
     padding-bottom: 72px;
   }
 
-  .differentials__row {
-    padding-inline: 20px;
-  }
-
   .differentials__row--offset {
     transform: none;
   }
@@ -230,16 +230,19 @@
 
   .differentials__row {
     gap: 12px;
-    padding-inline: 16px;
+  }
+
+  .differentials__track {
+    --dm-gap: 12px;
   }
 
   .differentials__tag {
-    min-height: 50px;
-    padding: 10px 20px;
+    min-height: 40px;
+    padding: 7px 14px;
   }
 
   .differentials__tag span:last-child {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
