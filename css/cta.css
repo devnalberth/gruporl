@@ -1,0 +1,147 @@
+.cta {
+  position: relative;
+  padding: 5.625rem clamp(1rem, 5vw, 3rem);
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cta__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.cta__overlay-card {
+  position: relative;
+  z-index: 1;
+  width: min(514px, 100%);
+  border-radius: 12px;
+  border: 1px solid #ef7c00;
+  background: #000200;
+  backdrop-filter: blur(5px);
+  padding: 32px;
+}
+
+.cta__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.cta__title {
+  margin: 0;
+  color: #fff;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  width: 100%;
+}
+
+.cta__lead {
+  margin: 0;
+  max-width: 312px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.cta__form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cta__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.cta__field input {
+  width: 100%;
+  min-height: 20px;
+  box-sizing: border-box;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  color: #fff;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 500;
+  padding: 13px 20px;
+  outline: none;
+}
+
+.cta__form > .cta__field {
+  display: block;
+  width: 100%;
+}
+
+.cta__form > .cta__field input {
+  width: 100%;
+}
+
+.cta__field input::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+.cta__field input:focus {
+  border-color: var(--brand-color-secondary);
+}
+
+.cta__submit {
+  width: 100%;
+  min-height: 56px;
+  border: 0;
+  border-radius: 1000px;
+  background: #ef7c00;
+  color: #474a51;
+  font-family: "Manrope", system-ui, sans-serif;
+  padding: 0 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.cta__submit:hover {
+  filter: brightness(0.92);
+}
+
+.cta__submit:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 680px) {
+  .cta {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .cta__overlay-card {
+    padding: 1.25rem;
+  }
+
+  .cta__row {
+    grid-template-columns: 1fr;
+  }
+}

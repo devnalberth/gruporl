@@ -1,0 +1,130 @@
+.founders {
+  background: #fff;
+  padding: 0 clamp(1rem, 4vw, 3.75rem) 5rem;
+}
+
+.founders__inner {
+  position: relative;
+  width: min(1310px, 100%);
+  margin: 0 auto;
+  border-radius: 20.641px;
+  overflow: hidden;
+  min-height: 760px;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(1.5rem, 4vw, 3.75rem);
+  isolation: isolate;
+}
+
+.founders__bg {
+  position: absolute;
+  left: 0;
+  top: -24.16%;
+  width: 100%;
+  height: 192.9%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: -2;
+}
+
+.founders__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 35.67%, rgba(0, 0, 0, 1) 100%);
+}
+
+.founders__content {
+  width: min(1168px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.75rem, 4vw, 2.85rem);
+}
+
+.founders__headline-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 3vw, 2.15rem);
+}
+
+.founders__divider {
+  width: 100%;
+  height: 2px;
+  opacity: 0.35;
+}
+
+.founders__title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0.4;
+}
+
+.founders__text-grid {
+  width: min(1123px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 4vw, 4rem);
+}
+
+.founders__text-grid p {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.founders__text-grid strong {
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .founders {
+    padding-bottom: 4.5rem;
+  }
+
+  .founders__inner {
+    min-height: 640px;
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .founders__bg {
+    top: -12%;
+    height: 160%;
+  }
+
+  .founders__title {
+    opacity: 0.5;
+  }
+
+  .founders__text-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .founders__inner {
+    min-height: 560px;
+    padding: 1.25rem;
+  }
+
+  .founders__bg {
+    top: -6%;
+    height: 138%;
+  }
+
+  .founders__title {
+    font-size: clamp(1.6rem, 9vw, 2.2rem);
+  }
+
+  .founders__text-grid p {
+    font-size: 0.95rem;
+  }
+}

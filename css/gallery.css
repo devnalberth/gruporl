@@ -1,0 +1,153 @@
+.gallery {
+  background: #fff;
+  padding: 5rem clamp(1rem, 4vw, 3.75rem);
+}
+
+.gallery__inner {
+  width: min(1320px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+}
+
+.gallery__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.gallery__tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  padding: 0 1rem;
+  border-radius: 100px;
+  background: #eaeaea;
+  color: #5c5c5c;
+  font-size: 0.875rem;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.gallery__title {
+  margin: 0;
+  color: #1a1a1a;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.gallery__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  border: 1px solid #1a1a1a;
+  background: #fefefe;
+  color: #1a1a1a;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.gallery__cta:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.gallery__cta:hover img {
+  filter: invert(1);
+}
+
+.gallery__cta:focus-visible {
+  outline: 2px solid var(--brand-color-secondary);
+  outline-offset: 2px;
+}
+
+.gallery__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.gallery__item {
+  margin: 0;
+  width: 321px;
+  height: 320px;
+  flex: 0 0 321px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery__item img {
+  width: 321px;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 1200px) {
+  .gallery__item {
+    width: calc((100% - 24px) / 3);
+    height: auto;
+    aspect-ratio: 321 / 320;
+    flex-basis: calc((100% - 24px) / 3);
+  }
+
+  .gallery__item img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .gallery__inner {
+    gap: 2.5rem;
+  }
+
+  .gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery__item {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 321 / 320;
+    flex-basis: auto;
+  }
+
+  .gallery__item img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .gallery__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery__item {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 321 / 320;
+  }
+
+  .gallery__item img {
+    width: 100%;
+    height: 100%;
+  }
+}

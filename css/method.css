@@ -1,0 +1,321 @@
+.method {
+  box-sizing: border-box;
+  width: 100%;
+  background: var(--background-color);
+  color: var(--color-details);
+  font-family: "Manrope", system-ui, sans-serif;
+}
+
+.method__inner {
+  box-sizing: border-box;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: 80px 0 32px;
+}
+
+.method__header {
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+  width: 100%;
+  max-width: 1275px;
+  margin: 0 auto;
+  padding: 0 60px 32px;
+}
+
+.method__heading {
+  width: min(100%, 488px);
+}
+
+.method__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 15px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.method__eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand-color-secondary);
+}
+
+.method__title {
+  margin: 0;
+  font-size: clamp(26px, 2.8vw, 32px);
+  font-weight: 700;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.method__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  width: min(100%, 437px);
+}
+
+.method__desc p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.method__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 8px 26px;
+  border-radius: 38px;
+  background: var(--brand-color-secondary);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  transition: filter 180ms ease;
+}
+
+.method__cta:hover {
+  filter: brightness(1.05);
+}
+
+.method__cta:focus-visible {
+  outline: 2px solid var(--brand-color-primary);
+  outline-offset: 2px;
+}
+
+.method__cta-arrow {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ── ACCORDION CARDS ───────────────────────────────────────────── */
+
+.method__cards {
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+  gap: 11px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* base card — flex-grow 1 = fechado */
+.method-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  min-height: 413px;
+  min-width: 0;
+  cursor: pointer;
+  outline: none;
+  flex: 1 1 0;
+  /* anima a proporção suavemente */
+  transition: flex-grow 480ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* active — flex-grow 3 ≈ 43% da largura total (proporção Figma: 600 / 198.75 ≈ 3×) */
+.method-card--active,
+.method-card[aria-expanded="true"] {
+  flex-grow: 3;
+  cursor: default;
+}
+
+/* edge radius overrides */
+.method-card--left-edge {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.method-card--right-edge {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* keyboard focus ring */
+.method-card:focus-visible {
+  outline: 2px solid var(--brand-color-secondary);
+  outline-offset: 2px;
+}
+
+/* ── background image + overlays ── */
+.method-card__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.method-card__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.method-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  transition: opacity 400ms ease;
+}
+
+/* expanded card: lighter top gradient */
+.method-card[aria-expanded="true"] .method-card__overlay {
+  background: linear-gradient(180deg, rgba(102, 102, 102, 0) 33%, rgba(0, 0, 0, 0.92) 100%);
+}
+
+/* ── collapsed label (rotated title) ── */
+.method-card__label {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 220ms ease;
+  pointer-events: none;
+}
+
+.method-card__label h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+}
+
+/* hide rotated label when card is expanded */
+.method-card[aria-expanded="true"] .method-card__label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── expanded content ── */
+.method-card__content {
+  position: absolute;
+  z-index: 2;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 300ms ease 160ms, transform 300ms ease 160ms;
+  pointer-events: none;
+}
+
+.method-card[aria-expanded="true"] .method-card__content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.method-card__content h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.method-card__content p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: 450px;
+}
+
+@media (max-width: 1260px) {
+  .method__header {
+    padding-inline: 32px;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 980px) {
+  .method__inner {
+    padding-top: 64px;
+  }
+
+  .method__header {
+    flex-direction: column;
+    padding: 0 20px 28px;
+  }
+
+  .method__heading,
+  .method__desc {
+    width: 100%;
+    max-width: 640px;
+  }
+
+  .method__desc p {
+    line-height: 1.35;
+  }
+
+  .method-card[aria-expanded="true"] {
+    flex-grow: 4;
+  }
+}
+
+@media (max-width: 640px) {
+  .method__inner {
+    padding-top: 52px;
+  }
+
+  .method__title {
+    font-size: 24px;
+  }
+
+  .method-card {
+    min-height: 320px;
+  }
+
+  .method-card__label h3 {
+    font-size: 20px;
+  }
+
+  .method-card[aria-expanded="true"] {
+    flex-grow: 5;
+  }
+
+  .method-card__content {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    gap: 12px;
+  }
+
+  .method-card__content h3 {
+    font-size: 26px;
+  }
+
+  .method-card__content p {
+    font-size: 13px;
+    max-width: 320px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .method__cta {
+    transition: none;
+  }
+}

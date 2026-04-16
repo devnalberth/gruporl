@@ -1,0 +1,156 @@
+.site-footer {
+  background: #000200;
+  color: #fff;
+  padding: 6.25rem clamp(1rem, 3vw, 1.875rem) 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer__inner {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.site-footer__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.site-footer__about {
+  margin: 0;
+  max-width: 403px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.site-footer__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.75rem;
+}
+
+.site-footer__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.95rem;
+}
+
+.site-footer__nav a,
+.site-footer__legal-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.site-footer__nav a:hover,
+.site-footer__legal-links a:hover {
+  text-decoration: underline;
+}
+
+.site-footer__social {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.site-footer__social a {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-footer__brand {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: "Geist", "Manrope", sans-serif;
+  font-size: clamp(3.2rem, 14vw, 12rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  background: linear-gradient(180deg, #f0f0f0 0%, #000 80.069%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  user-select: none;
+}
+
+.site-footer__bottom {
+  margin-top: -0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-footer__legal-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.site-footer__legal-links a,
+.site-footer__bottom p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.site-footer__bottom p {
+  font-family: "Geist", "Manrope", sans-serif;
+  font-weight: 400;
+  line-height: 1.57;
+}
+
+.site-footer__whatsapp {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 50;
+  border-radius: 999px;
+  line-height: 0;
+}
+
+.site-footer a:focus-visible {
+  outline: 2px solid var(--brand-color-secondary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (max-width: 960px) {
+  .site-footer__top {
+    flex-direction: column;
+  }
+
+  .site-footer__right {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .site-footer__nav {
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-footer__legal-links {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}

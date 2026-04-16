@@ -1,0 +1,244 @@
+.feedbacks {
+  box-sizing: border-box;
+  width: 100%;
+  background: #000200;
+}
+
+.feedbacks__inner {
+  box-sizing: border-box;
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: 64px 140px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.feedbacks__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.feedbacks__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feedbacks__eyebrow {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.28px;
+}
+
+.feedbacks__title {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.feedbacks__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 80px;
+}
+
+.feedbacks__contact-thumb {
+  border-radius: 8px;
+  padding: 4px;
+  background: #ffffff;
+  display: inline-flex;
+}
+
+.feedbacks__contact-thumb img {
+  width: 72px;
+  height: 72px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.feedbacks__contact-cta {
+  border-radius: 8px;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  color: #000200;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.feedbacks__contact-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 99px;
+  background: #000200;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  box-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.3),
+    0 14px 4px rgba(0, 0, 0, 0),
+    0 9px 4px rgba(0, 0, 0, 0.03),
+    0 5px 3px rgba(0, 0, 0, 0.1),
+    0 2px 2px rgba(0, 0, 0, 0.17),
+    0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.feedbacks__hero {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  min-height: 635px;
+}
+
+.feedbacks__hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feedbacks__hero-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  width: 72px;
+  height: 72px;
+  border-radius: 99px;
+  background: #000200;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.feedbacks__hero-play img {
+  width: 32px;
+  height: 32px;
+}
+
+.feedbacks__hero-play:focus-visible,
+.feedback-card__play:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.feedbacks__list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.feedback-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 313px;
+}
+
+.feedback-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feedback-card__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 80px;
+  background: rgba(26, 26, 26, 0.5);
+  width: 52px;
+  height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+@media (max-width: 1280px) {
+  .feedbacks__inner {
+    padding: 56px 32px;
+  }
+
+  .feedbacks__title {
+    font-size: clamp(28px, 3.2vw, 32px);
+  }
+}
+
+@media (max-width: 980px) {
+  .feedbacks__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .feedbacks__hero {
+    min-height: 460px;
+  }
+
+  .feedbacks__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .feedbacks__inner {
+    padding: 48px 20px;
+    gap: 40px;
+  }
+
+  .feedbacks__contact {
+    width: 100%;
+    height: auto;
+  }
+
+  .feedbacks__contact-cta {
+    flex: 1;
+    justify-content: space-between;
+    min-width: 0;
+  }
+
+  .feedbacks__hero {
+    min-height: 360px;
+  }
+
+  .feedbacks__hero-play {
+    width: 64px;
+    height: 64px;
+  }
+
+  .feedbacks__hero-play img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .feedbacks__list {
+    grid-template-columns: 1fr;
+  }
+}
