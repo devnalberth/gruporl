@@ -16,6 +16,9 @@ build/
 .DS_Store
 Thumbs.db
 
+# Pacotes de entrega grandes (limite do GitHub: 100 MB por ficheiro)
+assets/Picflow Images Apr 16.zip
+
 # Logs e temporários
 *.log
 npm-debug.log*
