@@ -16,27 +16,48 @@
     href="https://fonts.googleapis.com/css2?family=Geist:wght@500&amp;family=Manrope:wght@400;500;700&amp;display=swap"
     rel="stylesheet"
   />
-  <link rel="preload" href="assets/hero/logo-grupo-rl.png" as="image" type="image/png" />
+  <!-- LCP: um único preload de imagem (poster do hero); logo sem competição de prioridade -->
   <link rel="preload" href="assets/hero/hero-placeholder.svg" as="image" type="image/svg+xml" />
+  <link rel="dns-prefetch" href="https://www.youtube.com" />
+  <link rel="dns-prefetch" href="https://www.google.com" />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/reveal.css" />
   <link rel="stylesheet" href="css/hero.css" />
-  <link rel="stylesheet" href="css/timeline.css" />
-  <link rel="stylesheet" href="css/projects.css" />
-  <link rel="stylesheet" href="css/brands.css" />
-  <link rel="stylesheet" href="css/differentials.css" />
-  <link rel="stylesheet" href="css/partners.css" />
-  <link rel="stylesheet" href="css/method.css" />
-  <link rel="stylesheet" href="css/processes.css" />
-  <link rel="stylesheet" href="css/video-cases.css" />
-  <link rel="stylesheet" href="css/feedbacks.css" />
-  <link rel="stylesheet" href="css/products.css" />
-  <link rel="stylesheet" href="css/gallery.css" />
-  <link rel="stylesheet" href="css/founders.css" />
-  <link rel="stylesheet" href="css/location.css" />
-  <link rel="stylesheet" href="css/blog.css" />
-  <link rel="stylesheet" href="css/cta.css" />
-  <link rel="stylesheet" href="css/footer.css" />
+  <!-- CSS abaixo da dobra: carrega sem bloquear o primeiro paint (melhora LCP / TTI) -->
+  <link rel="stylesheet" href="css/timeline.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/projects.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/brands.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/differentials.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/partners.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/method.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/processes.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/video-cases.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/feedbacks.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/products.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/gallery.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/founders.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/location.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/blog.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/cta.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="css/footer.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="css/timeline.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link rel="stylesheet" href="css/brands.css" />
+    <link rel="stylesheet" href="css/differentials.css" />
+    <link rel="stylesheet" href="css/partners.css" />
+    <link rel="stylesheet" href="css/method.css" />
+    <link rel="stylesheet" href="css/processes.css" />
+    <link rel="stylesheet" href="css/video-cases.css" />
+    <link rel="stylesheet" href="css/feedbacks.css" />
+    <link rel="stylesheet" href="css/products.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+    <link rel="stylesheet" href="css/founders.css" />
+    <link rel="stylesheet" href="css/location.css" />
+    <link rel="stylesheet" href="css/blog.css" />
+    <link rel="stylesheet" href="css/cta.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </noscript>
 </head>
 <body>
   <a class="skip-link" href="#conteudo-principal">Ir para o conteúdo principal</a>
@@ -55,7 +76,7 @@
             width="1440"
             height="1024"
             alt=""
-            decoding="async"
+            decoding="sync"
             fetchpriority="high"
           />
         </div>
@@ -70,7 +91,7 @@
               height="30"
               alt="Grupo RL"
               decoding="async"
-              fetchpriority="high"
+              fetchpriority="low"
             />
           </a>
         </div>
@@ -947,10 +968,30 @@
         </header>
 
         <article class="products__showcase" data-node-id="2010:2507" aria-label="Categoria de produtos em destaque" data-products-carousel>
-          <img class="products__side products__side--left" src="assets/products/Sarah Medeiros - RL OFFICE  (30).webp" width="200" height="400" loading="lazy" decoding="async" alt="Ambiente corporativo e mobiliário Grupo RL." />
+          <img
+            class="products__side products__side--left"
+            src="assets/products/carousel/slide-30.webp"
+            srcset="assets/products/carousel/slide-30-sm.webp 1024w, assets/products/carousel/slide-30.webp 1920w"
+            sizes="(max-width: 1200px) 120px, 200px"
+            width="200"
+            height="400"
+            loading="lazy"
+            decoding="async"
+            alt="Ambiente corporativo e mobiliário Grupo RL."
+          />
 
           <div class="products__main" data-node-id="2010:2511">
-            <img class="products__main-img" src="assets/products/Sarah Medeiros - RL OFFICE  (3).webp" width="900" height="500" loading="lazy" decoding="async" alt="Ambiente corporativo e mobiliário Grupo RL — foto 1 de 19." />
+            <img
+              class="products__main-img"
+              src="assets/products/carousel/slide-3.webp"
+              srcset="assets/products/carousel/slide-3-sm.webp 1024w, assets/products/carousel/slide-3.webp 1920w"
+              sizes="(max-width: 900px) 100vw, min(900px, 96vw)"
+              width="900"
+              height="500"
+              loading="lazy"
+              decoding="async"
+              alt="Ambiente corporativo e mobiliário Grupo RL — foto 1 de 19."
+            />
 
             <div class="products__nav" data-node-id="2010:2512">
               <button type="button" class="products__nav-btn products__nav-btn--prev" aria-label="Imagem anterior">
@@ -962,7 +1003,17 @@
             </div>
           </div>
 
-          <img class="products__side products__side--right" src="assets/products/Sarah Medeiros - RL OFFICE  (4).webp" width="200" height="400" loading="lazy" decoding="async" alt="Ambiente corporativo e mobiliário Grupo RL." />
+          <img
+            class="products__side products__side--right"
+            src="assets/products/carousel/slide-4.webp"
+            srcset="assets/products/carousel/slide-4-sm.webp 1024w, assets/products/carousel/slide-4.webp 1920w"
+            sizes="(max-width: 1200px) 120px, 200px"
+            width="200"
+            height="400"
+            loading="lazy"
+            decoding="async"
+            alt="Ambiente corporativo e mobiliário Grupo RL."
+          />
         </article>
 
         <footer class="products__footer" data-node-id="2010:2518">
@@ -1544,7 +1595,7 @@
       if (!leftImg || !mainImg || !rightImg) return;
 
       var nums = [3, 4, 5, 6, 7, 8, 9, 11, 12, 14, 15, 16, 18, 19, 20, 25, 26, 29, 30];
-      var pathPrefix = 'assets/products/Sarah Medeiros - RL OFFICE  (';
+      var pathPrefix = 'assets/products/carousel/slide-';
       var captions = [
         'Cadeiras corporativas',
         'Estações e mesas',
@@ -1555,7 +1606,9 @@
 
       var slides = nums.map(function (n, idx) {
         return {
-          src: pathPrefix + n + ').webp',
+          id: String(n),
+          src: pathPrefix + n + '.webp',
+          srcSm: pathPrefix + n + '-sm.webp',
           caption: captions[idx % captions.length]
         };
       });
@@ -1564,9 +1617,65 @@
       if (len < 1) return;
 
       var index = 0;
+      var preloaded = {};
 
       function mod(n, m) {
         return ((n % m) + m) % m;
+      }
+
+      function preloadUrl(url) {
+        if (preloaded[url]) return;
+        var img = new Image();
+        img.src = url;
+        preloaded[url] = img;
+      }
+
+      function preloadSlide(slide) {
+        preloadUrl(slide.srcSm);
+        preloadUrl(slide.src);
+      }
+
+      var prefetchEnabled = false;
+      var productsSection = document.querySelector('.products');
+      if (productsSection && typeof IntersectionObserver !== 'undefined') {
+        var pio = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              prefetchEnabled = true;
+              prefetchNeighbors();
+              pio.disconnect();
+            });
+          },
+          { rootMargin: '160px', threshold: 0 }
+        );
+        pio.observe(productsSection);
+      } else {
+        prefetchEnabled = true;
+      }
+
+      function prefetchNeighbors() {
+        if (!prefetchEnabled) return;
+        var d;
+        for (d = -1; d <= 1; d++) {
+          preloadSlide(slides[mod(index + d, len)]);
+        }
+      }
+
+      function setImg(el, slide, altText) {
+        if (el.dataset.carouselSlide === slide.id) {
+          el.alt = altText;
+          return;
+        }
+        el.srcset = slide.srcSm + ' 1024w, ' + slide.src + ' 1920w';
+        if (el.classList.contains('products__main-img')) {
+          el.sizes = '(max-width: 900px) 100vw, min(900px, 96vw)';
+        } else {
+          el.sizes = '(max-width: 1200px) 120px, 200px';
+        }
+        el.src = slide.src;
+        el.alt = altText;
+        el.dataset.carouselSlide = slide.id;
       }
 
       function render() {
@@ -1577,13 +1686,11 @@
         var altMain =
           'Ambiente corporativo e mobiliário Grupo RL — foto ' + (index + 1) + ' de ' + len + '.';
 
-        leftImg.src = prev.src;
-        leftImg.alt = altSide;
-        mainImg.src = cur.src;
-        mainImg.alt = altMain;
-        rightImg.src = next.src;
-        rightImg.alt = altSide;
+        setImg(leftImg, prev, altSide);
+        setImg(mainImg, cur, altMain);
+        setImg(rightImg, next, altSide);
         if (captionEl) captionEl.textContent = cur.caption;
+        prefetchNeighbors();
       }
 
       function go(delta) {
