@@ -1,0 +1,51 @@
+/* Entrada por elementos + barra de scroll (cores da marca) */
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-item {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+    transition:
+      opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal-item.is-reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* WebKit (Chrome, Safari, Edge) — track e thumb em ambos os eixos */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 2, 0, 0.06);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--brand-color-secondary) 0%, #c96a00 100%);
+  border-radius: 999px;
+  border: 2px solid rgba(0, 2, 0, 0.06);
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-color-secondary);
+  border-color: rgba(0, 2, 0, 0.08);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

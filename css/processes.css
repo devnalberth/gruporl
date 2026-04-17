@@ -203,7 +203,8 @@
   }
 
   .processes__heading {
-    width: 360px;
+    width: 100%;
+    max-width: 360px;
   }
 
   .processes__title {
@@ -219,6 +220,24 @@
     grid-template-columns: 1fr;
     gap: 16px;
     padding-top: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .processes__cta-wrap {
+    padding-inline: 4px;
+  }
+
+  .processes__cta {
+    box-sizing: border-box;
+    max-width: min(100%, 280px);
+    padding: 12px 18px;
+    font-size: 13px;
+    line-height: 1.35;
+    text-align: center;
+    text-wrap: balance;
+    white-space: normal;
+    gap: 8px;
   }
 }
 

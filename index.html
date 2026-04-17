@@ -3,15 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#000200" />
   <title>Grupo RL</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@500&amp;display=swap" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500&amp;display=swap" rel="stylesheet" />
+  <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@500&amp;family=Manrope:wght@400;500;700&amp;display=swap"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@500&amp;family=Manrope:wght@400;500;700&amp;display=swap"
+    rel="stylesheet"
+  />
+  <link rel="preload" href="assets/hero/logo-grupo-rl.png" as="image" type="image/png" />
+  <link rel="preload" href="assets/hero/hero-placeholder.svg" as="image" type="image/svg+xml" />
   <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/reveal.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/timeline.css" />
   <link rel="stylesheet" href="css/projects.css" />
@@ -35,24 +43,35 @@
 
   <main id="conteudo-principal">
     <!-- Hero — Figma: s01 -HERO (node 2004:9613) -->
-    <section class="hero" data-node-id="2004:9613" data-name="s01 -HERO" aria-label="Apresentação">
+    <section class="hero" id="inicio" data-node-id="2004:9613" data-name="s01 -HERO" aria-label="Apresentação">
       <div class="hero__media">
-        <div class="hero__video">
-          <iframe
-            class="hero__video-iframe"
-            src="https://www.youtube.com/embed/_dPj0KgniDE?autoplay=1&mute=1&playsinline=1&si=2xK4ZQJQUq9HmClM"
-            title="Vídeo institucional do Grupo RL no YouTube"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+        <div
+          class="hero__video"
+          data-youtube-src="https://www.youtube.com/embed/_dPj0KgniDE?autoplay=1&amp;mute=1&amp;playsinline=1&amp;si=2xK4ZQJQUq9HmClM"
+        >
+          <img
+            class="hero__video-poster"
+            src="assets/hero/hero-placeholder.svg"
+            width="1440"
+            height="1024"
+            alt=""
+            decoding="async"
+            fetchpriority="high"
+          />
         </div>
       </div>
 
       <header class="hero__header" data-node-id="2004:9623" data-name="Header Nav">
         <div class="hero__logo" data-node-id="2010:2279" data-name="Logo">
           <a href="#" data-node-id="2010:2631" aria-label="Grupo RL" translate="no">
-            <img src="assets/hero/logo-grupo-rl.png" width="154" height="30" alt="Grupo RL" />
+            <img
+              src="assets/hero/logo-grupo-rl.png"
+              width="154"
+              height="30"
+              alt="Grupo RL"
+              decoding="async"
+              fetchpriority="high"
+            />
           </a>
         </div>
         <nav class="hero__nav" aria-label="Principal" data-node-id="2010:2256" data-name="Menu">
@@ -74,7 +93,7 @@
       <div class="hero__headline" data-node-id="2004:9614" data-name="HEADLINE">
         <div class="hero__title-block" data-node-id="2004:9615" data-name="Title and desc">
           <div class="hero__location" data-node-id="2004:9616" data-name="Location">
-            <img src="assets/icons/marker.svg" width="20" height="20" alt="Localização" data-node-id="2010:2286" />
+            <img src="assets/icons/marker.svg" width="20" height="20" alt="Localização" loading="lazy" decoding="async" data-node-id="2010:2286" />
             <span data-node-id="2004:9618">Maceió, Alagoas</span>
           </div>
           <h1 class="hero__title" data-node-id="2004:9619">
@@ -84,9 +103,9 @@
         </div>
         <div class="hero__social" data-node-id="2010:2250" data-name="Social proof">
           <div class="hero__avatars" data-node-id="2010:2251" data-name="Avatar">
-            <img src="assets/hero/avatar-1.png" width="28" height="28" alt="" data-node-id="2010:2252" />
-            <img src="assets/hero/avatar-2.png" width="28" height="28" alt="" data-node-id="2010:2253" />
-            <img src="assets/hero/avatar-3.png" width="28" height="28" alt="" data-node-id="2010:2254" />
+            <img src="assets/hero/avatar-1.png" width="28" height="28" alt="" loading="lazy" decoding="async" data-node-id="2010:2252" />
+            <img src="assets/hero/avatar-2.png" width="28" height="28" alt="" loading="lazy" decoding="async" data-node-id="2010:2253" />
+            <img src="assets/hero/avatar-3.png" width="28" height="28" alt="" loading="lazy" decoding="async" data-node-id="2010:2254" />
           </div>
           <p data-node-id="2010:2255">+1000 clientes atendidos</p>
         </div>
@@ -330,7 +349,7 @@
                 </p>
                 <a class="brand-card__link" href="#" data-node-id="2125:1973">
                   <span data-node-id="2125:1975">Saiba mais</span>
-                  <img src="assets/brands/link-arrow.png" width="14" height="14" alt="" data-node-id="2125:1976" />
+                  <img src="assets/brands/link-arrow.png" width="14" height="14" alt="" loading="lazy" decoding="async" data-node-id="2125:1976" />
                 </a>
               </div>
             </article>
@@ -359,7 +378,7 @@
                 </p>
                 <a class="brand-card__link" href="#" data-node-id="2125:1992">
                   <span data-node-id="2125:1994">Saiba mais</span>
-                  <img src="assets/brands/link-arrow.png" width="14" height="14" alt="" data-node-id="2125:1995" />
+                  <img src="assets/brands/link-arrow.png" width="14" height="14" alt="" loading="lazy" decoding="async" data-node-id="2125:1995" />
                 </a>
               </div>
             </article>
@@ -388,7 +407,7 @@
                 </p>
                 <a class="brand-card__link" href="#" data-node-id="2125:2011">
                   <span data-node-id="2125:2013">Saiba mais</span>
-                  <img src="assets/brands/link-arrow.png" width="14" height="14" alt="" data-node-id="2125:2014" />
+                  <img src="assets/brands/link-arrow.png" width="14" height="14" alt="" loading="lazy" decoding="async" data-node-id="2125:2014" />
                 </a>
               </div>
             </article>
@@ -874,6 +893,7 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
+              loading="lazy"
             ></iframe>
           </div>
         </div>
@@ -930,7 +950,7 @@
           <img class="products__side products__side--left" src="assets/products/Sarah Medeiros - RL OFFICE  (30).webp" width="200" height="400" loading="lazy" decoding="async" alt="Ambiente corporativo e mobiliário Grupo RL." />
 
           <div class="products__main" data-node-id="2010:2511">
-            <img class="products__main-img" src="assets/products/Sarah Medeiros - RL OFFICE  (3).webp" width="900" height="500" fetchpriority="high" decoding="async" alt="Ambiente corporativo e mobiliário Grupo RL — foto 1 de 19." />
+            <img class="products__main-img" src="assets/products/Sarah Medeiros - RL OFFICE  (3).webp" width="900" height="500" loading="lazy" decoding="async" alt="Ambiente corporativo e mobiliário Grupo RL — foto 1 de 19." />
 
             <div class="products__nav" data-node-id="2010:2512">
               <button type="button" class="products__nav-btn products__nav-btn--prev" aria-label="Imagem anterior">
@@ -1214,6 +1234,110 @@
 
   <script>
     (function () {
+      var groups = document.querySelectorAll('main > section:not(.hero)');
+      if (!groups.length) return;
+
+      var targetSelector = [
+        'header',
+        'h2',
+        'h3',
+        'p',
+        'article',
+        'figure',
+        'a',
+        'button',
+        'form',
+        '.timeline-card',
+        '.video-case-card',
+        '.process-card',
+        '.blog-card',
+        '.location-card'
+      ].join(', ');
+
+      var items = [];
+      groups.forEach(function (group) {
+        var nodes = group.querySelectorAll(targetSelector);
+        if (!nodes.length) {
+          nodes = [group];
+        }
+        nodes.forEach(function (node, idx) {
+          node.classList.add('reveal-item');
+          node.style.setProperty('--reveal-delay', Math.min(idx, 8) * 55 + 'ms');
+          items.push(node);
+        });
+      });
+
+      if (!items.length) return;
+
+      function reveal(el) {
+        el.classList.add('is-reveal-visible');
+      }
+
+      if (typeof IntersectionObserver === 'undefined') {
+        items.forEach(reveal);
+        return;
+      }
+
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) {
+        items.forEach(reveal);
+        return;
+      }
+
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            reveal(entry.target);
+            io.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.14, rootMargin: '0px 0px -7% 0px' }
+      );
+
+      items.forEach(function (el) {
+        io.observe(el);
+      });
+    })();
+
+    (function () {
+      var wrap = document.querySelector('.hero__video[data-youtube-src]');
+      if (!wrap) return;
+      var poster = wrap.querySelector('.hero__video-poster');
+      var url = wrap.getAttribute('data-youtube-src');
+      if (!url) return;
+
+      function inject() {
+        if (wrap.querySelector('iframe.hero__video-iframe')) return;
+        var iframe = document.createElement('iframe');
+        iframe.className = 'hero__video-iframe';
+        iframe.src = url;
+        iframe.title = 'Vídeo institucional do Grupo RL no YouTube';
+        iframe.setAttribute(
+          'allow',
+          'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        );
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        iframe.setAttribute('allowfullscreen', '');
+        if (poster && poster.parentNode) {
+          poster.parentNode.removeChild(poster);
+        }
+        wrap.appendChild(iframe);
+      }
+
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(
+          function () {
+            inject();
+          },
+          { timeout: 2200 }
+        );
+      } else {
+        window.setTimeout(inject, 800);
+      }
+    })();
+
+    (function () {
       var cards = document.querySelectorAll('.method__cards .method-card');
       if (!cards.length) return;
 
@@ -1340,6 +1464,9 @@
     (function () {
       var section = document.querySelector('.video-cases');
       if (!section) return;
+      var track = section.querySelector('.video-cases__track');
+      var prevNav = section.querySelector('.video-cases__nav-btn[aria-label="Cases anteriores"]');
+      var nextNav = section.querySelector('.video-cases__nav-btn[aria-label="Próximos cases"]');
 
       section.querySelectorAll('.video-case-card').forEach(function (card) {
         var video = card.querySelector('.video-case-card__video');
@@ -1366,6 +1493,42 @@
           }
         });
       });
+
+      if (!track || !prevNav || !nextNav) return;
+
+      function getStep() {
+        var firstCard = track.querySelector('.video-case-card');
+        if (!firstCard) return Math.max(220, track.clientWidth * 0.85);
+        var styles = window.getComputedStyle(track);
+        var gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+        return firstCard.getBoundingClientRect().width + gap;
+      }
+
+      function updateNavState() {
+        var maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+        var atStart = track.scrollLeft <= 2;
+        var atEnd = track.scrollLeft >= maxScroll - 2;
+
+        prevNav.disabled = atStart;
+        nextNav.disabled = atEnd;
+      }
+
+      function scrollByStep(direction) {
+        track.scrollBy({
+          left: getStep() * direction,
+          behavior: 'smooth'
+        });
+      }
+
+      prevNav.addEventListener('click', function () {
+        scrollByStep(-1);
+      });
+      nextNav.addEventListener('click', function () {
+        scrollByStep(1);
+      });
+      track.addEventListener('scroll', updateNavState, { passive: true });
+      window.addEventListener('resize', updateNavState);
+      updateNavState();
     })();
 
     (function () {

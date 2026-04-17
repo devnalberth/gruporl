@@ -258,12 +258,21 @@
   }
 
   .projects__cta-wrap {
-    width: 100%;
+    width: auto;
+    max-width: min(100%, 300px);
+    align-self: center;
   }
 
   .projects__cta {
-    width: 100%;
+    box-sizing: border-box;
+    width: auto;
+    max-width: 100%;
+    padding-inline: 20px;
+    font-size: 14px;
+    line-height: 1.45;
     text-align: center;
+    text-wrap: balance;
+    white-space: normal;
   }
 }
 

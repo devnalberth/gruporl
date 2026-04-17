@@ -3,6 +3,8 @@
 html {
   background: var(--gray-black);
   color-scheme: dark;
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-color-secondary) rgba(0, 2, 0, 0.1);
 }
 
 body {
@@ -97,6 +99,21 @@ main {
   overflow: hidden;
 }
 
+.hero__video-poster {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 177.78vh;
+  height: 56.25vw;
+  min-width: 100%;
+  min-height: 100%;
+  border: 0;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero__video-iframe {
   position: absolute;
   top: 50%;
@@ -107,6 +124,7 @@ main {
   min-height: 100%;
   border: 0;
   transform: translate(-50%, -50%);
+  z-index: 0;
 }
 
 .hero__header,
@@ -392,25 +410,47 @@ main {
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
-    padding: 140px 20px 64px;
+    padding: 100px 20px 64px;
   }
 
   .hero__header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
+    max-width: 100%;
     padding: 16px 20px 0;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    row-gap: 18px;
+    column-gap: 12px;
+    row-gap: 0;
   }
 
-  .hero__actions,
   .hero__nav {
-    justify-content: center;
-    flex-wrap: wrap;
+    display: none;
+  }
+
+  .hero__logo {
+    flex-shrink: 0;
+    min-width: 0;
   }
 
   .hero__actions {
-    gap: 16px;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .hero__btn-ghost {
+    padding: 6px 14px;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero__btn-icon {
+    width: 40px;
+    min-height: 40px;
   }
 
   .hero__headline {
