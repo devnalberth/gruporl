@@ -4,6 +4,8 @@
   background: #ffffff;
   color: var(--brand-color-primary);
   font-family: "Manrope", system-ui, sans-serif;
+  --partners-logo-height: 34px;
+  --partners-logo-gap: 60px;
 }
 
 .partners__inner {
@@ -46,18 +48,19 @@
 .partners__marquee::before {
   left: 0;
   width: clamp(120px, 28%, 464px);
-  background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.88) 62%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.84) 62%, rgba(255, 255, 255, 0) 100%);
 }
 
 .partners__marquee::after {
   right: 0;
   width: clamp(96px, 15%, 202px);
-  background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0.82) 60.98%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.78) 60.98%, rgba(255, 255, 255, 0) 100%);
 }
 
 .partners__track {
   display: flex;
   align-items: center;
+  gap: var(--partners-logo-gap);
   width: max-content;
   animation: partners-marquee 18s linear infinite;
 }
@@ -65,35 +68,34 @@
 .partners__list {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: var(--partners-logo-gap);
   margin: 0;
   padding: 28px 0;
   list-style: none;
 }
 
 .partners__logo {
+  display: block;
   flex-shrink: 0;
+  height: var(--partners-logo-height);
   background-color: var(--brand-color-primary);
   opacity: 0.95;
 }
 
 .partners__logo--pandin {
-  width: 135px;
-  height: 36px;
+  width: calc(var(--partners-logo-height) * 3.75);
   -webkit-mask: center / contain no-repeat url("../assets/partners/logo-pandin.webp");
   mask: center / contain no-repeat url("../assets/partners/logo-pandin.webp");
 }
 
 .partners__logo--gebbwork {
-  width: 123px;
-  height: 32px;
+  width: calc(var(--partners-logo-height) * 3.84375);
   -webkit-mask: center / contain no-repeat url("../assets/partners/logo-gebbwork.webp");
   mask: center / contain no-repeat url("../assets/partners/logo-gebbwork.webp");
 }
 
 .partners__logo--cavaletti {
-  width: 116px;
-  height: 32px;
+  width: calc(var(--partners-logo-height) * 3.625);
   -webkit-mask: center / contain no-repeat url("../assets/partners/logo-cavaletti.webp");
   mask: center / contain no-repeat url("../assets/partners/logo-cavaletti.webp");
 }
@@ -115,7 +117,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-50% - 30px));
+    transform: translateX(calc(-50% - (var(--partners-logo-gap) / 2)));
   }
 }
 
@@ -133,6 +135,11 @@
 }
 
 @media (max-width: 640px) {
+  .partners {
+    --partners-logo-height: 30px;
+    --partners-logo-gap: 40px;
+  }
+
   .partners__inner {
     padding: 48px 20px;
     gap: 20px;

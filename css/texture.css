@@ -1,0 +1,181 @@
+:root {
+  --site-texture-grid: rgba(228, 228, 231, 0.72);
+  --site-texture-grid-soft: rgba(254, 254, 254, 0.92);
+  --site-texture-dot: rgba(254, 254, 254, 0.98);
+  --site-texture-glow: rgba(254, 254, 254, 0.86);
+  --site-texture-shadow: rgba(26, 26, 30, 0.05);
+}
+
+:is(
+  .timeline,
+  .projects,
+  .brands,
+  .differentials,
+  .partners,
+  .method,
+  .processes,
+  .products,
+  .gallery,
+  .founders,
+  .location,
+  .blog
+) {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+}
+
+:is(
+  .timeline,
+  .projects,
+  .brands,
+  .differentials,
+  .partners,
+  .method,
+  .processes,
+  .products,
+  .gallery,
+  .founders,
+  .location,
+  .blog
+)::before,
+:is(
+  .timeline,
+  .projects,
+  .brands,
+  .differentials,
+  .partners,
+  .method,
+  .processes,
+  .products,
+  .gallery,
+  .founders,
+  .location,
+  .blog
+)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+:is(
+  .timeline,
+  .projects,
+  .brands,
+  .differentials,
+  .partners,
+  .method,
+  .processes,
+  .products,
+  .gallery,
+  .founders,
+  .location,
+  .blog
+)::before {
+  z-index: -2;
+  opacity: 0.76;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 43px,
+      var(--site-texture-grid) 43px,
+      var(--site-texture-grid) 44px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      transparent 0,
+      transparent 43px,
+      var(--site-texture-grid-soft) 43px,
+      var(--site-texture-grid-soft) 44px
+    ),
+    radial-gradient(circle at 1px 1px, var(--site-texture-dot) 1.15px, transparent 1.45px),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.42) 0.8px, transparent 1.1px);
+  background-size: auto, auto, 12px 12px, 24px 24px;
+  background-position: 0 0, 0 0, 2px 3px, 1px 1px;
+}
+
+:is(
+  .timeline,
+  .projects,
+  .brands,
+  .differentials,
+  .partners,
+  .method,
+  .processes,
+  .products,
+  .gallery,
+  .founders,
+  .location,
+  .blog
+)::after {
+  z-index: -1;
+  opacity: 0.9;
+  background:
+    radial-gradient(circle at 18% 16%, var(--site-texture-glow), transparent 20%),
+    radial-gradient(circle at 72% 68%, rgba(255, 255, 255, 0.48), transparent 24%),
+    radial-gradient(circle at 82% 74%, var(--site-texture-shadow), transparent 28%);
+  animation: site-texture-drift 18s ease-in-out infinite alternate;
+}
+
+.founders::before,
+.founders::after {
+  opacity: 0.5;
+}
+
+.products::before,
+.gallery::before,
+.location::before {
+  opacity: 0.82;
+}
+
+@keyframes site-texture-drift {
+  from {
+    transform: translate3d(-0.7%, -0.5%, 0);
+    opacity: 0.5;
+  }
+  to {
+    transform: translate3d(0.8%, 0.65%, 0);
+    opacity: 0.82;
+  }
+}
+
+@media (max-width: 768px) {
+  :is(
+    .timeline,
+    .projects,
+    .brands,
+    .differentials,
+    .partners,
+    .method,
+    .processes,
+    .products,
+    .gallery,
+    .founders,
+    .location,
+    .blog
+  )::before {
+    background-size: auto, auto, 10px 10px, 20px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    .timeline,
+    .projects,
+    .brands,
+    .differentials,
+    .partners,
+    .method,
+    .processes,
+    .products,
+    .gallery,
+    .founders,
+    .location,
+    .blog
+  )::after {
+    animation: none;
+    transform: none;
+  }
+}
