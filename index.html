@@ -83,6 +83,49 @@
           />
         </div>
       </div>
+      <div class="hero__video-menu" role="group" aria-label="Controles do vídeo de fundo">
+        <button
+          type="button"
+          class="hero__video-control"
+          data-hero-video-audio
+          aria-label="Ativar áudio do vídeo"
+          aria-pressed="false"
+        >
+          <svg
+            class="hero__video-control-icon"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            aria-hidden="true"
+          >
+            <path d="M11 5 6 9H3v6h3l5 4V5Z"></path>
+            <path d="M15.5 8.5a5 5 0 0 1 0 7"></path>
+            <path d="M18.5 5.5a9 9 0 0 1 0 13"></path>
+          </svg>
+          <span class="hero__video-control-text">Áudio</span>
+        </button>
+        <button
+          type="button"
+          class="hero__video-control"
+          data-hero-video-fullscreen
+          aria-label="Abrir vídeo em tela cheia"
+          aria-pressed="false"
+        >
+          <svg
+            class="hero__video-control-icon"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            aria-hidden="true"
+          >
+            <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
+            <path d="M16 3h3a2 2 0 0 1 2 2v3"></path>
+            <path d="M21 16v3a2 2 0 0 1-2 2h-3"></path>
+            <path d="M8 21H5a2 2 0 0 1-2-2v-3"></path>
+          </svg>
+          <span class="hero__video-control-text">Tela cheia</span>
+        </button>
+      </div>
 
       <header class="hero__header" data-node-id="2004:9623" data-name="Header Nav">
         <div class="hero__logo" data-node-id="2010:2279" data-name="Logo">
@@ -250,11 +293,6 @@
                 alt="Recepção corporativa com poltronas claras, bancada central e copa em tons neutros."
                 data-node-id="2055:1774"
               />
-              <figcaption class="project-card__meta" data-node-id="2056:25">
-                <span class="project-card__title" data-node-id="2056:27">Sedes Corporativas</span>
-                <span class="project-card__divider" aria-hidden="true" data-node-id="2056:28"></span>
-                <span class="project-card__description" data-node-id="2056:29">Layouts inteligentes que comunicam a cultura da sua empresa.</span>
-              </figcaption>
             </figure>
 
             <figure class="project-card project-card--large" data-node-id="2055:1783" data-name="Work Item Content">
@@ -269,11 +307,19 @@
                 alt="Ambiente de trabalho com paredes coloridas, iluminação linear e estações de operação."
                 data-node-id="2055:1784"
               />
-              <figcaption class="project-card__meta" data-node-id="2055:1775">
-                <span class="project-card__title" data-node-id="2055:1777">Cozinhas de Luxo (Bentec)</span>
-                <span class="project-card__divider" aria-hidden="true" data-node-id="2055:1778"></span>
-                <span class="project-card__description" data-node-id="2055:1779">A união entre tecnologia italiana e marcenaria de precisão.</span>
-              </figcaption>
+            </figure>
+
+            <figure class="project-card project-card--medium">
+              <img
+                class="project-card__image"
+                src="assets/projects/_GDB0184.webp"
+                width="624"
+                height="426"
+                loading="lazy"
+                decoding="async"
+                sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1440px) calc((100vw - 192px) / 2), 624px"
+                alt="Projeto corporativo com mobiliário planejado e acabamento contemporâneo."
+              />
             </figure>
           </div>
 
@@ -290,11 +336,6 @@
                 alt="Espaço de convivência e apoio com mesa central, cadeiras escuras e revestimento de tijolo."
                 data-node-id="2055:1795"
               />
-              <figcaption class="project-card__meta" data-node-id="2056:35">
-                <span class="project-card__title" data-node-id="2056:37">Mobiliário de Elite</span>
-                <span class="project-card__divider" aria-hidden="true" data-node-id="2056:38"></span>
-                <span class="project-card__description" data-node-id="2056:39">Ergonomia avançada para lideranças que buscam o topo.</span>
-              </figcaption>
             </figure>
 
             <figure class="project-card project-card--medium" data-node-id="2055:1804" data-name="Work Item Content">
@@ -309,11 +350,19 @@
                 alt="Auditório compacto com fileiras de cadeiras operacionais e painel ripado ao fundo."
                 data-node-id="2055:1805"
               />
-              <figcaption class="project-card__meta" data-node-id="2056:30">
-                <span class="project-card__title" data-node-id="2056:32">Auditórios e Lounges</span>
-                <span class="project-card__divider" aria-hidden="true" data-node-id="2056:33"></span>
-                <span class="project-card__description" data-node-id="2056:34">Espaços criados para conexões reais e grandes decisões.</span>
-              </figcaption>
+            </figure>
+
+            <figure class="project-card project-card--tall">
+              <img
+                class="project-card__image"
+                src="assets/projects/_GDB0210.webp"
+                width="624"
+                height="447"
+                loading="lazy"
+                decoding="async"
+                sizes="(max-width: 768px) calc(100vw - 40px), (max-width: 1440px) calc((100vw - 192px) / 2), 624px"
+                alt="Ambiente corporativo planejado com iluminação e marcenaria sob medida."
+              />
             </figure>
           </div>
         </div>
@@ -351,7 +400,7 @@
             <article class="brand-card brand-card--movelaria" data-node-id="2125:1962" data-name="Container">
               <span class="brand-card__index" aria-hidden="true" data-node-id="2125:1980">01</span>
               <div class="brand-card__logo" data-node-id="2125:1963">
-                <div class="brand-card__logo-inner" data-node-id="2125:1964">
+                <a class="brand-card__logo-inner" href="https://www.movelariarl.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da Movelaria RL" data-node-id="2125:1964">
                   <img
                     src="assets/brands/logo-movelaria.png"
                     width="80"
@@ -360,7 +409,7 @@
                     decoding="async"
                     alt="Movelaria RL"
                   />
-                </div>
+                </a>
               </div>
               <div class="brand-card__divider" data-node-id="2125:1965"></div>
               <div class="brand-card__body" data-node-id="2125:1966">
@@ -370,7 +419,7 @@
                 <p class="brand-card__copy" data-node-id="2125:1972">
                   O ponto de partida do Grupo. Soluções corporativas completas em mobiliário para pessoas e empresas que buscam ambientes de alta performance.
                 </p>
-                <a class="brand-card__link" href="#" data-node-id="2125:1973">
+                <a class="brand-card__link" href="https://www.movelariarl.com.br/" target="_blank" rel="noopener noreferrer" data-node-id="2125:1973">
                   <span data-node-id="2125:1975">Saiba mais</span>
                   <img src="assets/brands/link-arrow.png" width="14" height="14" alt="" loading="lazy" decoding="async" data-node-id="2125:1976" />
                 </a>
@@ -410,15 +459,17 @@
             <article class="brand-card brand-card--bentec" data-node-id="2125:2000" data-name="Container">
               <span class="brand-card__index" aria-hidden="true" data-node-id="2125:2018">03</span>
               <div class="brand-card__logo" data-node-id="2125:2001">
-                <img
-                  src="assets/brands/logo-bentec.png"
-                  width="170"
-                  height="46"
-                  loading="lazy"
-                  decoding="async"
-                  alt="Bentec móveis planejados"
-                  data-node-id="2125:2002"
-                />
+                <a href="https://bentec.com.br/pt/" target="_blank" rel="noopener noreferrer" aria-label="Acessar site da Bentec">
+                  <img
+                    src="assets/brands/logo-bentec.png"
+                    width="170"
+                    height="46"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Bentec móveis planejados"
+                    data-node-id="2125:2002"
+                  />
+                </a>
               </div>
               <div class="brand-card__divider" data-node-id="2125:2003"></div>
               <div class="brand-card__body" data-node-id="2125:2004">
@@ -428,7 +479,7 @@
                 <p class="brand-card__copy" data-node-id="2125:2010">
                   Planejamento e execução de ambientes sob medida com alto padrão de qualidade. Referência em móveis planejados para o mercado corporativo.
                 </p>
-                <a class="brand-card__link" href="#" data-node-id="2125:2011">
+                <a class="brand-card__link" href="https://bentec.com.br/pt/" target="_blank" rel="noopener noreferrer" data-node-id="2125:2011">
                   <span data-node-id="2125:2013">Saiba mais</span>
                   <img src="assets/brands/link-arrow.png" width="14" height="14" alt="" loading="lazy" decoding="async" data-node-id="2125:2014" />
                 </a>
@@ -466,7 +517,6 @@
         <div class="differentials__marquee">
           <div class="differentials__track">
             <ul class="differentials__row differentials__row--offset" data-node-id="2012:151">
-              <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Soft Skills</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Experiência</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Ergonomia</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Qualidade</span></li>
@@ -474,10 +524,8 @@
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Personalização</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Atendimento consultivo</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Experiência de +20 anos</span></li>
-              <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Estratégias de posicionamento</span></li>
             </ul>
             <ul class="differentials__row differentials__row--offset" aria-hidden="true">
-              <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Soft Skills</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Experiência</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Ergonomia</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Qualidade</span></li>
@@ -485,7 +533,6 @@
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Personalização</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Atendimento consultivo</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Experiência de +20 anos</span></li>
-              <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Estratégias de posicionamento</span></li>
             </ul>
           </div>
         </div>
@@ -493,8 +540,6 @@
         <div class="differentials__marquee">
           <div class="differentials__track differentials__track--reverse">
             <ul class="differentials__row" data-node-id="2012:182">
-              <li class="differentials__tag differentials__tag--active"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Soft Skills</span></li>
-              <li class="differentials__tag differentials__tag--active"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Fire Networking</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Ambiência</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Negociação</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Integração completa (do layout à instalação)</span></li>
@@ -502,11 +547,8 @@
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Atendimento consultivo</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Personalização</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Garantia</span></li>
-              <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Estratégias de posicionamento</span></li>
             </ul>
             <ul class="differentials__row" aria-hidden="true">
-              <li class="differentials__tag differentials__tag--active"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Soft Skills</span></li>
-              <li class="differentials__tag differentials__tag--active"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Fire Networking</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Ambiência</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Negociação</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Integração completa (do layout à instalação)</span></li>
@@ -514,7 +556,6 @@
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Atendimento consultivo</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Personalização</span></li>
               <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Garantia</span></li>
-              <li class="differentials__tag"><span class="differentials__tag-dot" aria-hidden="true"></span><span>Estratégias de posicionamento</span></li>
             </ul>
           </div>
         </div>
@@ -706,7 +747,6 @@
         <div class="processes__cta-wrap" data-node-id="2125:2069">
           <a class="processes__cta" href="#contato" data-node-id="2125:2070">
             <span data-node-id="2125:2072">Fale com um Especialista</span>
-            <img src="assets/processes/process-cta-icon.png" width="16" height="16" loading="lazy" decoding="async" alt="" data-node-id="2125:2073" />
           </a>
         </div>
       </div>
@@ -736,19 +776,11 @@
                 width="220"
                 height="380"
                 preload="none"
+                controls
                 muted
                 playsinline
                 aria-label="Vídeo: Escritório Corporativo Sector A"
               ></video>
-              <span class="video-case-card__index">01</span>
-              <div class="video-case-card__content">
-                <button type="button" class="video-case-card__play" aria-label="Reproduzir vídeo Escritório Corporativo Sector A">
-                  <img src="assets/video-cases/play-icon.svg" width="18" height="18" alt="" />
-                </button>
-                <span class="video-case-card__line" aria-hidden="true"></span>
-                <p class="video-case-card__meta">Mobiliário Executivo · 2:34</p>
-                <span>Escritório Corporativo Sector A</span>
-              </div>
             </article>
 
             <article class="video-case-card" data-node-id="2128:2214">
@@ -759,19 +791,11 @@
                 width="220"
                 height="380"
                 preload="none"
+                controls
                 muted
                 playsinline
                 aria-label="Vídeo: Ambiente Planejado Residencial Premium"
               ></video>
-              <span class="video-case-card__index">02</span>
-              <div class="video-case-card__content">
-                <button type="button" class="video-case-card__play" aria-label="Reproduzir vídeo Ambiente Planejado Residencial Premium">
-                  <img src="assets/video-cases/play-icon.svg" width="18" height="18" alt="" />
-                </button>
-                <span class="video-case-card__line" aria-hidden="true"></span>
-                <p class="video-case-card__meta">Móveis Sob Medida · 1:58</p>
-                <span>Ambiente Planejado Residencial Premium</span>
-              </div>
             </article>
 
             <article class="video-case-card" data-node-id="2128:2230">
@@ -782,19 +806,11 @@
                 width="220"
                 height="380"
                 preload="none"
+                controls
                 muted
                 playsinline
                 aria-label="Vídeo: Showroom Corporativo Farol"
               ></video>
-              <span class="video-case-card__index">03</span>
-              <div class="video-case-card__content">
-                <button type="button" class="video-case-card__play" aria-label="Reproduzir vídeo Showroom Corporativo Farol">
-                  <img src="assets/video-cases/play-icon.svg" width="18" height="18" alt="" />
-                </button>
-                <span class="video-case-card__line" aria-hidden="true"></span>
-                <p class="video-case-card__meta">Projeto Completo · 3:12</p>
-                <span>Showroom Corporativo Farol</span>
-              </div>
             </article>
 
             <article class="video-case-card" data-node-id="2128:2246">
@@ -805,19 +821,11 @@
                 width="220"
                 height="380"
                 preload="none"
+                controls
                 muted
                 playsinline
                 aria-label="Vídeo: Sala de Reuniões Empresa Jurídica"
               ></video>
-              <span class="video-case-card__index">04</span>
-              <div class="video-case-card__content">
-                <button type="button" class="video-case-card__play" aria-label="Reproduzir vídeo Sala de Reuniões Empresa Jurídica">
-                  <img src="assets/video-cases/play-icon.svg" width="18" height="18" alt="" />
-                </button>
-                <span class="video-case-card__line" aria-hidden="true"></span>
-                <p class="video-case-card__meta">Mobiliário Executivo · 2:07</p>
-                <span>Sala de Reuniões Empresa Jurídica</span>
-              </div>
             </article>
 
             <article class="video-case-card" data-node-id="2128:2262">
@@ -828,19 +836,11 @@
                 width="220"
                 height="380"
                 preload="none"
+                controls
                 muted
                 playsinline
                 aria-label="Vídeo: Open Space Startup de Tecnologia"
               ></video>
-              <span class="video-case-card__index">05</span>
-              <div class="video-case-card__content">
-                <button type="button" class="video-case-card__play" aria-label="Reproduzir vídeo Open Space Startup de Tecnologia">
-                  <img src="assets/video-cases/play-icon.svg" width="18" height="18" alt="" />
-                </button>
-                <span class="video-case-card__line" aria-hidden="true"></span>
-                <p class="video-case-card__meta">Móveis Sob Medida · 1:45</p>
-                <span>Open Space Startup de Tecnologia</span>
-              </div>
             </article>
 
             <article class="video-case-card" data-node-id="2128:2278">
@@ -851,39 +851,14 @@
                 width="220"
                 height="380"
                 preload="none"
+                controls
                 muted
                 playsinline
                 aria-label="Vídeo: Recepção Clínica Médica Premium"
               ></video>
-              <span class="video-case-card__index">06</span>
-              <div class="video-case-card__content">
-                <button type="button" class="video-case-card__play" aria-label="Reproduzir vídeo Recepção Clínica Médica Premium">
-                  <img src="assets/video-cases/play-icon.svg" width="18" height="18" alt="" />
-                </button>
-                <span class="video-case-card__line" aria-hidden="true"></span>
-                <p class="video-case-card__meta">Projeto Completo · 2:20</p>
-                <span>Recepção Clínica Médica Premium</span>
-              </div>
             </article>
           </div>
         </div>
-
-        <footer class="video-cases__footer" data-node-id="2128:2181">
-          <div class="video-cases__controls">
-            <button type="button" class="video-cases__nav-btn" aria-label="Cases anteriores">
-              <img src="assets/video-cases/nav-left.svg" width="16" height="16" alt="" />
-            </button>
-            <button type="button" class="video-cases__nav-btn" aria-label="Próximos cases">
-              <img src="assets/video-cases/nav-right.svg" width="16" height="16" alt="" />
-            </button>
-            <span class="video-cases__count">6 cases disponíveis</span>
-          </div>
-
-          <a class="video-cases__cta" href="#galeria">
-            <span>Ver todos os cases</span>
-            <img src="assets/video-cases/cta-arrow.svg" width="16" height="16" alt="" />
-          </a>
-        </footer>
       </div>
     </section>
 
@@ -1060,7 +1035,7 @@
             <img src="assets/gallery/gallery-07-grid.webp" width="900" height="601" loading="lazy" decoding="async" alt="Área social ampla com mesas redondas e iluminação decorativa." />
           </article>
           <article class="gallery__item" data-node-id="2010:2626">
-            <img src="assets/gallery/gallery-08-grid.webp" width="900" height="1350" loading="lazy" decoding="async" alt="Vista panorâmica do espaço interno e mezanino corporativo." />
+            <img src="assets/projects/Sarah Medeiros - RL OFFICE  (32).webp" width="900" height="1350" loading="lazy" decoding="async" alt="Vista panorâmica do espaço interno e mezanino corporativo." />
           </article>
         </div>
       </div>
@@ -1356,27 +1331,146 @@
     (function () {
       var wrap = document.querySelector('.hero__video[data-youtube-src]');
       if (!wrap) return;
+      var fullscreenTarget = wrap.closest('.hero');
       var poster = wrap.querySelector('.hero__video-poster');
       var url = wrap.getAttribute('data-youtube-src');
+      var audioBtn = document.querySelector('[data-hero-video-audio]');
+      var fullscreenBtn = document.querySelector('[data-hero-video-fullscreen]');
+      var iframe = null;
+      var iframeLoaded = false;
+      var audioEnabled = false;
       if (!url) return;
 
+      function getPlayerUrl() {
+        try {
+          var parsed = new URL(url);
+          parsed.searchParams.set('autoplay', '1');
+          parsed.searchParams.set('mute', audioEnabled ? '0' : '1');
+          parsed.searchParams.set('playsinline', '1');
+          parsed.searchParams.set('controls', '0');
+          parsed.searchParams.set('rel', '0');
+          parsed.searchParams.set('modestbranding', '1');
+          parsed.searchParams.set('enablejsapi', '1');
+          if (/^https?:$/.test(window.location.protocol)) {
+            parsed.searchParams.set('origin', window.location.origin);
+          }
+          return parsed.toString();
+        } catch (e) {
+          return url;
+        }
+      }
+
+      function sendYoutubeCommand(func, args) {
+        if (!iframe || !iframe.contentWindow || !iframeLoaded) return;
+        iframe.contentWindow.postMessage(
+          JSON.stringify({
+            event: 'command',
+            func: func,
+            args: args || []
+          }),
+          '*'
+        );
+      }
+
+      function syncAudioButton() {
+        if (!audioBtn) return;
+        audioBtn.setAttribute('aria-pressed', audioEnabled ? 'true' : 'false');
+        audioBtn.setAttribute('aria-label', audioEnabled ? 'Silenciar vídeo' : 'Ativar áudio do vídeo');
+        audioBtn.classList.toggle('hero__video-control--active', audioEnabled);
+      }
+
+      function applyAudioState() {
+        syncAudioButton();
+        if (!iframeLoaded) return;
+        if (audioEnabled) {
+          sendYoutubeCommand('unMute');
+          sendYoutubeCommand('setVolume', [72]);
+          sendYoutubeCommand('playVideo');
+          window.setTimeout(function () {
+            if (!audioEnabled) return;
+            sendYoutubeCommand('unMute');
+            sendYoutubeCommand('setVolume', [72]);
+          }, 450);
+        } else {
+          sendYoutubeCommand('mute');
+        }
+      }
+
       function inject() {
-        if (wrap.querySelector('iframe.hero__video-iframe')) return;
-        var iframe = document.createElement('iframe');
+        if (iframe) return;
+        iframe = document.createElement('iframe');
         iframe.className = 'hero__video-iframe';
-        iframe.src = url;
+        iframe.src = getPlayerUrl();
         iframe.title = 'Vídeo institucional do Grupo RL no YouTube';
         iframe.setAttribute(
           'allow',
-          'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+          'accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share'
         );
         iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
         iframe.setAttribute('allowfullscreen', '');
+        iframe.addEventListener('load', function () {
+          iframeLoaded = true;
+          applyAudioState();
+        });
         if (poster && poster.parentNode) {
           poster.parentNode.removeChild(poster);
         }
         wrap.appendChild(iframe);
       }
+
+      if (audioBtn) {
+        audioBtn.addEventListener('click', function () {
+          audioEnabled = !audioEnabled;
+          inject();
+          applyAudioState();
+        });
+      }
+
+      function getFullscreenElement() {
+        return document.fullscreenElement || document.webkitFullscreenElement;
+      }
+
+      function requestFullscreen(el) {
+        var method = el.requestFullscreen || el.webkitRequestFullscreen;
+        if (!method) return null;
+        return method.call(el);
+      }
+
+      function exitFullscreen() {
+        var method = document.exitFullscreen || document.webkitExitFullscreen;
+        if (!method) return null;
+        return method.call(document);
+      }
+
+      if (fullscreenBtn && fullscreenTarget) {
+        if (!fullscreenTarget.requestFullscreen && !fullscreenTarget.webkitRequestFullscreen) {
+          fullscreenBtn.disabled = true;
+          fullscreenBtn.setAttribute('aria-label', 'Tela cheia indisponível neste navegador');
+        } else {
+          fullscreenBtn.addEventListener('click', function () {
+            var isFullscreen = getFullscreenElement() === fullscreenTarget;
+            var result = isFullscreen ? exitFullscreen() : requestFullscreen(fullscreenTarget);
+            if (result && result.catch) {
+              result.catch(function () {});
+            }
+          });
+        }
+
+        function syncFullscreenButton() {
+          var isFullscreen = getFullscreenElement() === fullscreenTarget;
+          fullscreenBtn.setAttribute('aria-pressed', isFullscreen ? 'true' : 'false');
+          fullscreenBtn.setAttribute(
+            'aria-label',
+            isFullscreen ? 'Sair da tela cheia' : 'Abrir vídeo em tela cheia'
+          );
+          fullscreenBtn.classList.toggle('hero__video-control--active', isFullscreen);
+        }
+
+        document.addEventListener('fullscreenchange', syncFullscreenButton);
+        document.addEventListener('webkitfullscreenchange', syncFullscreenButton);
+      }
+
+      syncAudioButton();
 
       if ('requestIdleCallback' in window) {
         requestIdleCallback(
@@ -1512,76 +1606,6 @@
       timelineCards.forEach(function (el) {
         io.observe(el);
       });
-    })();
-
-    (function () {
-      var section = document.querySelector('.video-cases');
-      if (!section) return;
-      var track = section.querySelector('.video-cases__track');
-      var prevNav = section.querySelector('.video-cases__nav-btn[aria-label="Cases anteriores"]');
-      var nextNav = section.querySelector('.video-cases__nav-btn[aria-label="Próximos cases"]');
-
-      section.querySelectorAll('.video-case-card').forEach(function (card) {
-        var video = card.querySelector('.video-case-card__video');
-        var btn = card.querySelector('.video-case-card__play');
-        if (!video || !btn) return;
-
-        video.addEventListener('play', function () {
-          card.classList.add('video-case-card--playing');
-        });
-        video.addEventListener('pause', function () {
-          card.classList.remove('video-case-card--playing');
-        });
-
-        btn.addEventListener('click', function () {
-          section.querySelectorAll('.video-case-card__video').forEach(function (v) {
-            if (v !== video) {
-              v.pause();
-            }
-          });
-          if (video.paused) {
-            video.play().catch(function () {});
-          } else {
-            video.pause();
-          }
-        });
-      });
-
-      if (!track || !prevNav || !nextNav) return;
-
-      function getStep() {
-        var firstCard = track.querySelector('.video-case-card');
-        if (!firstCard) return Math.max(220, track.clientWidth * 0.85);
-        var styles = window.getComputedStyle(track);
-        var gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
-        return firstCard.getBoundingClientRect().width + gap;
-      }
-
-      function updateNavState() {
-        var maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
-        var atStart = track.scrollLeft <= 2;
-        var atEnd = track.scrollLeft >= maxScroll - 2;
-
-        prevNav.disabled = atStart;
-        nextNav.disabled = atEnd;
-      }
-
-      function scrollByStep(direction) {
-        track.scrollBy({
-          left: getStep() * direction,
-          behavior: 'smooth'
-        });
-      }
-
-      prevNav.addEventListener('click', function () {
-        scrollByStep(-1);
-      });
-      nextNav.addEventListener('click', function () {
-        scrollByStep(1);
-      });
-      track.addEventListener('scroll', updateNavState, { passive: true });
-      window.addEventListener('resize', updateNavState);
-      updateNavState();
     })();
 
     (function () {

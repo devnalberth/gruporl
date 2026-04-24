@@ -77,6 +77,8 @@
   gap: 16px;
   margin: 0;
   min-width: 0;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .project-card__image {
@@ -85,6 +87,17 @@
   height: auto;
   border-radius: 8px;
   object-fit: cover;
+  transform: scale(1);
+  transition: transform 280ms ease;
+  transform-origin: center;
+}
+
+.project-card:hover .project-card__image {
+  transform: scale(1.06);
+}
+
+.project-card:focus-within .project-card__image {
+  transform: scale(1.06);
 }
 
 .project-card--tall .project-card__image {
@@ -277,6 +290,15 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .project-card__image {
+    transition: none;
+  }
+
+  .project-card:hover .project-card__image,
+  .project-card:focus-within .project-card__image {
+    transform: none;
+  }
+
   .projects__cta-wrap {
     transition: none;
   }

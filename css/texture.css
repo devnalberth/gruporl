@@ -1,7 +1,8 @@
 :root {
-  --site-texture-grid: rgba(228, 228, 231, 0.72);
-  --site-texture-grid-soft: rgba(254, 254, 254, 0.92);
-  --site-texture-dot: rgba(254, 254, 254, 0.98);
+  --site-texture-dot: rgba(26, 26, 30, 0.075);
+  --site-texture-dot-soft: rgba(71, 74, 81, 0.045);
+  --site-texture-dot-light: rgba(254, 254, 254, 0.86);
+  --site-texture-dot-accent: rgba(239, 124, 0, 0.095);
   --site-texture-glow: rgba(254, 254, 254, 0.86);
   --site-texture-shadow: rgba(26, 26, 30, 0.05);
 }
@@ -74,26 +75,14 @@
   .blog
 )::before {
   z-index: -2;
-  opacity: 0.76;
+  opacity: 0.72;
   background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent 43px,
-      var(--site-texture-grid) 43px,
-      var(--site-texture-grid) 44px
-    ),
-    repeating-linear-gradient(
-      180deg,
-      transparent 0,
-      transparent 43px,
-      var(--site-texture-grid-soft) 43px,
-      var(--site-texture-grid-soft) 44px
-    ),
-    radial-gradient(circle at 1px 1px, var(--site-texture-dot) 1.15px, transparent 1.45px),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.42) 0.8px, transparent 1.1px);
-  background-size: auto, auto, 12px 12px, 24px 24px;
-  background-position: 0 0, 0 0, 2px 3px, 1px 1px;
+    radial-gradient(circle at 1px 1px, var(--site-texture-dot) 1.05px, transparent 1.35px),
+    radial-gradient(circle at 1px 1px, var(--site-texture-dot-soft) 1.2px, transparent 1.6px),
+    radial-gradient(circle at 1px 1px, var(--site-texture-dot-accent) 1px, transparent 1.35px),
+    radial-gradient(circle at 50% 50%, var(--site-texture-dot-light) 1px, transparent 1.35px);
+  background-size: 18px 18px, 42px 42px, 74px 74px, 10px 10px;
+  background-position: 0 0, 13px 17px, 31px 23px, 5px 7px;
 }
 
 :is(
@@ -156,7 +145,9 @@
     .location,
     .blog
   )::before {
-    background-size: auto, auto, 10px 10px, 20px 20px;
+    opacity: 0.64;
+    background-size: 16px 16px, 36px 36px, 64px 64px, 9px 9px;
+    background-position: 0 0, 9px 13px, 25px 19px, 4px 6px;
   }
 }
 

@@ -160,7 +160,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
   min-height: 53px;
   padding: 0 32px;
   border-radius: 999px;
@@ -182,11 +181,6 @@
 .processes__cta:focus-visible {
   outline: 2px solid var(--brand-color-primary);
   outline-offset: 3px;
-}
-
-.processes__cta img {
-  width: 16px;
-  height: 16px;
 }
 
 @media (max-width: 980px) {
@@ -230,14 +224,13 @@
 
   .processes__cta {
     box-sizing: border-box;
-    max-width: min(100%, 280px);
+    width: min(100%, 280px);
     padding: 12px 18px;
     font-size: 13px;
     line-height: 1.35;
     text-align: center;
     text-wrap: balance;
     white-space: normal;
-    gap: 8px;
   }
 }
 
