@@ -110,7 +110,7 @@
   min-height: 52px;
   border: 0;
   border-radius: 1000px;
-  background: #ef7c00;
+  background: var(--brand-color-secondary, #ef7c00);
   color: #474a51;
   font-family: "Manrope", system-ui, sans-serif;
   padding: 0 32px;
@@ -122,11 +122,17 @@
   line-height: 1;
   font-weight: 600;
   cursor: pointer;
-  transition: filter 0.2s ease;
+  transition: transform 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
 }
 
 .cta__submit:hover {
-  filter: brightness(0.92);
+  background: var(--brand-color-secondary, #ef7c00);
+  transform: scale(1.04);
+  box-shadow: 0 12px 24px rgba(239, 124, 0, 0.35);
+}
+
+.cta__submit:active {
+  transform: scale(0.99);
 }
 
 .cta__submit:focus-visible {

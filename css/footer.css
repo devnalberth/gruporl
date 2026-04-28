@@ -56,17 +56,61 @@
 
 .site-footer__social {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 0.5rem;
 }
 
 .site-footer__social a {
-  width: 2rem;
-  height: 2rem;
+  min-height: 2rem;
+  padding: 0.25rem 0.7rem 0.25rem 0.25rem;
+  border-radius: 999px;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #000200;
+  text-decoration: none;
+  font-family: "Geist", "Manrope", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: transform 220ms ease, background-color 220ms ease, box-shadow 220ms ease;
+}
+
+.site-footer__social-icon {
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 999px;
   background: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.site-footer__social a img {
+  width: 0.95rem;
+  height: 0.95rem;
+  transition: filter 220ms ease;
+}
+
+.site-footer__social-text {
+  line-height: 1;
+}
+
+.site-footer__social a:hover {
+  background: #ff7a00;
+  transform: scale(1.12);
+  box-shadow: 0 8px 18px rgba(255, 122, 0, 0.35);
+  color: #fff;
+}
+
+.site-footer__social a:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.site-footer__social a:hover .site-footer__social-icon {
+  background: transparent;
 }
 
 .site-footer__brand {
@@ -137,6 +181,10 @@
   .site-footer__right {
     width: 100%;
     align-items: flex-start;
+  }
+
+  .site-footer__social {
+    justify-content: flex-start;
   }
 
   .site-footer__nav {

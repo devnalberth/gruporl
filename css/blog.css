@@ -92,6 +92,13 @@
   height: 280px;
   object-fit: cover;
   border-radius: 8px;
+  transition: transform 260ms ease;
+  transform-origin: center;
+}
+
+.blog-card:hover > img,
+.blog-card > img:hover {
+  transform: scale(1.06);
 }
 
 .blog-card p {
@@ -135,10 +142,13 @@
   font-size: 1rem;
   font-weight: 500;
   line-height: 1;
+  transition: transform 220ms ease, color 220ms ease;
 }
 
 .blog-card__link:hover {
   text-decoration: underline;
+  color: var(--brand-color-secondary, #ef7c00);
+  transform: scale(1.06);
 }
 
 .blog-card__link:focus-visible {

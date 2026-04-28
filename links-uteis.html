@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Links Úteis — Grupo RL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #F97316;
+      --orange-light: #FB923C;
+      --orange-glow: rgba(249,115,22,0.35);
+      --black: #0A0A0A;
+      --dark: #111111;
+      --dark2: #1A1A1A;
+      --white: #FFFFFF;
+      --glass-bg: rgba(255,255,255,0.05);
+      --glass-border: rgba(255,255,255,0.10);
+      --glass-hover: rgba(249,115,22,0.10);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+
+    /* ─── BACKGROUND ─────────────────────────────── */
+    .bg-blobs {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.18;
+    }
+    .blob-1 { width: 500px; height: 500px; background: var(--orange); top: -120px; left: -100px; }
+    .blob-2 { width: 400px; height: 400px; background: var(--orange-light); bottom: -100px; right: -80px; }
+    .blob-3 { width: 300px; height: 300px; background: #FF6B00; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.08; }
+
+    /* ─── PASSWORD SCREEN ────────────────────────── */
+    #lock-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(12px);
+    }
+
+    .lock-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 24px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(249,115,22,0.08);
+    }
+
+    .lock-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, var(--orange), #FF6B00);
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 4px 24px var(--orange-glow);
+    }
+
+    .lock-card h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+
+    .lock-card p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    .lock-input-wrap {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
+    .lock-input-wrap input {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 12px;
+      padding: 14px 48px 14px 18px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.5px;
+    }
+    .lock-input-wrap input:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px var(--orange-glow);
+    }
+    .lock-input-wrap input::placeholder { color: rgba(255,255,255,0.3); }
+
+    .toggle-pw {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,0.4);
+      font-size: 16px;
+      padding: 4px;
+      transition: color 0.2s;
+    }
+    .toggle-pw:hover { color: var(--orange); }
+
+    .lock-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--orange), #E86500);
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+      letter-spacing: 0.3px;
+      box-shadow: 0 4px 20px var(--orange-glow);
+    }
+    .lock-btn:hover { opacity: 0.92; box-shadow: 0 6px 28px rgba(249,115,22,0.5); }
+    .lock-btn:active { transform: scale(0.98); }
+
+    .lock-error {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #FF6B6B;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .lock-error.visible { opacity: 1; }
+
+    /* ─── MAIN PAGE ──────────────────────────────── */
+    #main-page {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 680px;
+      padding: 40px 20px 60px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+    #main-page.visible { display: flex; }
+
+    /* Header */
+    .page-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 50px;
+      padding: 8px 20px 8px 8px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(10px);
+    }
+    .logo-dot {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--orange), #E86500);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      box-shadow: 0 2px 12px var(--orange-glow);
+    }
+    .logo-badge span {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .page-header h1 {
+      font-size: clamp(26px, 5vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .page-header h1 span {
+      background: linear-gradient(90deg, var(--orange), #FFAE68);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .page-header p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+    }
+
+    /* Divider */
+    .divider {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .divider-line { flex: 1; height: 1px; background: rgba(255,255,255,0.07); }
+    .divider-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Link Cards */
+    .links-grid {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .link-card {
+      position: relative;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      backdrop-filter: blur(16px);
+      transition: background 0.25s, border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+    }
+    .link-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(249,115,22,0.06) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.25s;
+      border-radius: inherit;
+    }
+    .link-card:hover {
+      background: var(--glass-hover);
+      border-color: rgba(249,115,22,0.30);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(249,115,22,0.12), 0 4px 20px var(--orange-glow);
+    }
+    .link-card:hover::before { opacity: 1; }
+    .link-card:active { transform: translateY(0); }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 14px;
+      background: rgba(249,115,22,0.12);
+      border: 1px solid rgba(249,115,22,0.20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
+      position: relative;
+      z-index: 1;
+    }
+    .link-card:hover .card-icon {
+      background: rgba(249,115,22,0.20);
+      border-color: rgba(249,115,22,0.40);
+      box-shadow: 0 2px 16px var(--orange-glow);
+    }
+
+    .card-info {
+      flex: 1;
+      min-width: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-url {
+      font-size: 11px;
+      color: rgba(255,255,255,0.30);
+      font-weight: 300;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-btn {
+      position: relative;
+      z-index: 1;
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--orange), #E86500);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 3px 14px var(--orange-glow);
+      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+      text-decoration: none;
+    }
+    .card-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 5px 20px rgba(249,115,22,0.55);
+    }
+    .card-btn:active { transform: scale(0.95); opacity: 0.85; }
+
+    /* Footer */
+    .page-footer {
+      margin-top: 48px;
+      text-align: center;
+    }
+    .page-footer p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.20);
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+    .page-footer span {
+      color: var(--orange);
+      opacity: 0.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .lock-card { padding: 36px 24px; margin: 20px; }
+      .link-card { padding: 16px 18px; gap: 14px; }
+      .card-icon { width: 42px; height: 42px; min-width: 42px; font-size: 18px; }
+      .card-title { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background blobs -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- ─── LOCK SCREEN ─── -->
+  <div id="lock-screen">
+    <div class="lock-card">
+      <div class="lock-icon">🔒</div>
+      <h2>Área Restrita</h2>
+      <p>Insira a senha para acessar os links internos do Grupo RL.</p>
+
+      <div class="lock-input-wrap">
+        <input
+          type="password"
+          id="pw-input"
+          placeholder="Digite a senha..."
+          autocomplete="current-password"
+          onkeydown="if(event.key==='Enter') checkPassword()"
+        />
+        <button class="toggle-pw" onclick="togglePw()" title="Mostrar/ocultar senha">👁️</button>
+      </div>
+
+      <button class="lock-btn" onclick="checkPassword()">Acessar</button>
+      <div class="lock-error" id="lock-error">Senha incorreta. Tente novamente.</div>
+    </div>
+  </div>
+
+  <!-- ─── MAIN PAGE ─── -->
+  <div id="main-page">
+
+    <div class="page-header">
+      <div class="logo-badge">
+        <div class="logo-dot">RL</div>
+        <span>Grupo RL</span>
+      </div>
+      <h1>Links <span>Úteis Internos</span></h1>
+      <p>Acesso rápido às ferramentas e plataformas da equipe.</p>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-label">Plataformas</div>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="links-grid">
+
+      <!-- Sistema ERP -->
+      <a class="link-card" href="https://app.erpm8.cloud/gruporl/Home/Index" target="_blank" rel="noopener">
+        <div class="card-icon">⚙️</div>
+        <div class="card-info">
+          <div class="card-title">Sistema — ERP</div>
+          <div class="card-url">app.erpm8.cloud/gruporl</div>
+        </div>
+        <a class="card-btn" href="https://app.erpm8.cloud/gruporl/Home/Index" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗</a>
+      </a>
+
+      <!-- Drive -->
+      <a class="link-card" href="https://drive.google.com/drive/u/1/folders/1iKBvjl3AJhdt5ISJfstvPuVo4khqsQMc" target="_blank" rel="noopener">
+        <div class="card-icon">📁</div>
+        <div class="card-info">
+          <div class="card-title">Drive — Arquivos Internos</div>
+          <div class="card-url">drive.google.com</div>
+        </div>
+        <a class="card-btn" href="https://drive.google.com/drive/u/1/folders/1iKBvjl3AJhdt5ISJfstvPuVo4khqsQMc" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗</a>
+      </a>
+
+      <!-- Núcleo Abraço -->
+      <a class="link-card" href="https://nucleoabraco.com.br/app/" target="_blank" rel="noopener">
+        <div class="card-icon">🤝</div>
+        <div class="card-info">
+          <div class="card-title">Núcleo Abraço</div>
+          <div class="card-url">nucleoabraco.com.br/app</div>
+        </div>
+        <a class="card-btn" href="https://nucleoabraco.com.br/app/" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗</a>
+      </a>
+
+      <!-- Monte sua Cadeira -->
+      <a class="link-card" href="https://www.montesuacadeira.com.br/" target="_blank" rel="noopener">
+        <div class="card-icon">🪑</div>
+        <div class="card-info">
+          <div class="card-title">Monte sua Cadeira</div>
+          <div class="card-url">montesuacadeira.com.br</div>
+        </div>
+        <a class="card-btn" href="https://www.montesuacadeira.com.br/" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗</a>
+      </a>
+
+      <!-- ChatbotMaker -->
+      <a class="link-card" href="https://portal.chatbotmaker.io/#/chatbot/cb82530432/messaging/" target="_blank" rel="noopener">
+        <div class="card-icon">💬</div>
+        <div class="card-info">
+          <div class="card-title">ChatbotMaker — Atendimento</div>
+          <div class="card-url">portal.chatbotmaker.io</div>
+        </div>
+        <a class="card-btn" href="https://portal.chatbotmaker.io/#/chatbot/cb82530432/messaging/" target="_blank" rel="noopener" onclick="event.stopPropagation()">↗</a>
+      </a>
+
+    </div>
+
+    <div class="page-footer">
+      <p>Grupo RL &nbsp;·&nbsp; <span>Uso interno</span> &nbsp;·&nbsp; Acesso restrito</p>
+      <p style="margin-top:10px;">Feito por <a href="https://grupodigitalboss.com.br" target="_blank" rel="noopener" style="color:var(--orange);opacity:0.75;text-decoration:none;font-weight:500;transition:opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.75'">@grupodigitalboss</a></p>
+    </div>
+
+  </div>
+
+  <script>
+    const CORRECT = 'vendedoresgruporl2026';
+
+    function checkPassword() {
+      const val = document.getElementById('pw-input').value;
+      const err = document.getElementById('lock-error');
+      if (val === CORRECT) {
+        document.getElementById('lock-screen').style.display = 'none';
+        const main = document.getElementById('main-page');
+        main.classList.add('visible');
+      } else {
+        err.classList.add('visible');
+        const inp = document.getElementById('pw-input');
+        inp.style.borderColor = '#FF6B6B';
+        inp.style.boxShadow = '0 0 0 3px rgba(255,107,107,0.25)';
+        setTimeout(() => {
+          err.classList.remove('visible');
+          inp.style.borderColor = '';
+          inp.style.boxShadow = '';
+        }, 2200);
+      }
+    }
+
+    function togglePw() {
+      const inp = document.getElementById('pw-input');
+      inp.type = inp.type === 'password' ? 'text' : 'password';
+    }
+  </script>
+</body>
+</html>
