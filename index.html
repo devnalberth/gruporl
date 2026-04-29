@@ -1269,13 +1269,74 @@
         </div>
       </div>
 
-      <a class="site-footer__whatsapp" href="https://gruporl.com.br/site/index.php/wa/whatsapp/?agent=3986&amp;number=+558233382237&amp;ref=https://gruporl.com.br/site" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp">
-        <img src="assets/footer/whatsapp.svg" width="59" height="59" alt="" />
-      </a>
+      <div class="site-footer__floating-actions" data-selo-theme="light">
+        <span class="site-footer__selo-wrap" aria-hidden="true">
+          <img class="site-footer__selo site-footer__selo--light" src="assets/icons/SELO.webp" width="76" height="76" alt="" />
+          <img class="site-footer__selo site-footer__selo--dark" src="assets/icons/SELOBLACK.webp" width="76" height="76" alt="" />
+        </span>
+        <a class="site-footer__whatsapp" href="https://gruporl.com.br/site/index.php/wa/whatsapp/?agent=3986&amp;number=+558233382237&amp;ref=https://gruporl.com.br/site" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp">
+          <img src="assets/footer/whatsapp.svg" width="59" height="59" alt="" />
+        </a>
+      </div>
     </footer>
   </main>
 
   <script>
+    (function () {
+      var floatingActions = document.querySelector('.site-footer__floating-actions');
+      if (!floatingActions) return;
+
+      function setSeloTheme(isDark) {
+        floatingActions.setAttribute('data-selo-theme', isDark ? 'dark' : 'light');
+      }
+
+      var forceLightSelectors = [
+        'section.hero',
+        'section.video-cases',
+        'section.feedbacks',
+        'section.cta',
+        'footer.site-footer'
+      ].join(', ');
+
+      function updateSeloByCurrentSection() {
+        var rect = floatingActions.getBoundingClientRect();
+        var probePoints = [
+          { x: rect.left - 12, y: rect.top + 10 },
+          { x: rect.left - 12, y: rect.bottom - 10 },
+          { x: rect.left + (rect.width / 2), y: rect.top - 12 }
+        ];
+        var container = null;
+
+        probePoints.some(function (point) {
+          var sampleX = Math.max(0, Math.min(window.innerWidth - 1, point.x));
+          var sampleY = Math.max(0, Math.min(window.innerHeight - 1, point.y));
+          var el = document.elementFromPoint(sampleX, sampleY);
+          var found = el ? el.closest('main > section, footer.site-footer') : null;
+          if (!found) return false;
+          container = found;
+          return true;
+        });
+
+        if (!container) return setSeloTheme(false);
+        var forceLight = Boolean(container.closest(forceLightSelectors));
+        setSeloTheme(!forceLight);
+      }
+
+      var scheduled = false;
+      function requestUpdate() {
+        if (scheduled) return;
+        scheduled = true;
+        requestAnimationFrame(function () {
+          scheduled = false;
+          updateSeloByCurrentSection();
+        });
+      }
+
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+      window.addEventListener('resize', requestUpdate);
+      requestUpdate();
+    })();
+
     (function () {
       var groups = document.querySelectorAll('main > section:not(.hero)');
       if (!groups.length) return;
