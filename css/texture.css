@@ -75,7 +75,7 @@
   .blog
 )::before {
   z-index: -2;
-  opacity: 0.72;
+  opacity: 0.76;
   background:
     radial-gradient(circle at 1px 1px, var(--site-texture-dot) 1.05px, transparent 1.35px),
     radial-gradient(circle at 1px 1px, var(--site-texture-dot-soft) 1.2px, transparent 1.6px),
@@ -145,7 +145,7 @@
     .location,
     .blog
   )::before {
-    opacity: 0.64;
+    opacity: 0.68;
     background-size: 16px 16px, 36px 36px, 64px 64px, 9px 9px;
     background-position: 0 0, 9px 13px, 25px 19px, 4px 6px;
   }
